@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+out/
+out_temp/
+media/
+videos/
+cache/
+current_data.json
+*.mp4
+manual_output.mp4
