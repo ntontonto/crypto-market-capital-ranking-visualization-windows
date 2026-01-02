@@ -73,17 +73,19 @@ class CryptoDataFetcher:
             for coin in current_top:
                 c_id = coin['id']
                 mcap = history_map.get(c_id, {}).get('market_caps', {}).get(d, 0)
+                price = history_map.get(c_id, {}).get('prices', {}).get(d, 0)
                 if mcap > 0:
                     daily_snapshot.append({
                         "id": c_id,
                         "symbol": coin['symbol'].upper(),
                         "name": coin['name'],
-                        "market_cap": mcap
+                        "market_cap": mcap,
+                        "price": price
                     })
             daily_snapshot.sort(key=lambda x: x['market_cap'], reverse=True)
             top10_7d.append({
                 "date": d,
-                "items": daily_snapshot[:10]
+                "items": daily_snapshot # Include all (up to 30) so we can filter for Top/Bottom gainers in Renderer
             })
             
         # 5. Build "weekly_top_movers" (7 Days Change)

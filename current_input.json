@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-01-02T02:16:28.076363Z",
+  "asOf": "2026-01-02T05:19:48.197539Z",
   "currency": "usd",
   "top10_7d": [
     {
@@ -9,61 +9,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1743187621561.159
+          "market_cap": 1743187621561.159,
+          "price": 87305.95655961394
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 353065144652.60986
+          "market_cap": 353065144652.60986,
+          "price": 2926.695639112761
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186755060290.9574
+          "market_cap": 186755060290.9574,
+          "price": 0.9993672322965341
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 114905145748.4669
+          "market_cap": 114905145748.4669,
+          "price": 834.3408283262127
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 111590253884.79008
+          "market_cap": 111590253884.79008,
+          "price": 1.8429652913700634
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 76517544120.7733
+          "market_cap": 76517544120.7733,
+          "price": 0.9998892293013324
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 68749899193.13757
+          "market_cap": 68749899193.13757,
+          "price": 122.18760348085107
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 26471777099.47492
+          "market_cap": 26471777099.47492,
+          "price": 0.27953925127721946
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 25686689465.154934
+          "market_cap": 25686689465.154934,
+          "price": 2925.7467137220024
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 18578288456.70482
+          "market_cap": 18578288456.70482,
+          "price": 0.12199701828520598
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14734694024.897457,
+          "price": 1.025905
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 12816538755.298286,
+          "price": 0.34958175338513353
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12001895040.837078,
+          "price": 56.05347400822269
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 11850362336.268053,
+          "price": 593.5512854619367
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11377823241.922543,
+          "price": 3579.873363501574
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 10915159582.168873,
+          "price": 87359.64227330609
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10380245575.82368,
+          "price": 3180.8229908667327
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9527430518.942455,
+          "price": 0.9998016545329736
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 8984532902.552887,
+          "price": 3174.171270029581
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8977196529.530943,
+          "price": 0.9991788391349902
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8616872677.552448,
+          "price": 12.17612640631502
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 8217749102.769047,
+          "price": 445.00711937491263
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 7826258642.669916,
+          "price": 8.493784478908848
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7531386573.841446,
+          "price": 2927.2011726497635
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 7367236270.8066025,
+          "price": 447.73602922293463
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 6910051013.611362,
+          "price": 0.21344608860618633
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6341629886.321075,
+          "price": 87327.12876510878
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6308410608.786358,
+          "price": 0.9985345828219275
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6132155765.198997,
+          "price": 25.736824599783372
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 5886678583.590361,
+          "price": 76.79548473768956
         }
       ]
     },
@@ -74,61 +224,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1753375412209.345
+          "market_cap": 1753375412209.345,
+          "price": 87807.003210775
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 355905880030.65027
+          "market_cap": 355905880030.65027,
+          "price": 2948.8621262576116
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186731617227.19147
+          "market_cap": 186731617227.19147,
+          "price": 0.9994697292631358
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 116342864989.3187
+          "market_cap": 116342864989.3187,
+          "price": 844.6780493960856
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 113432868120.26703
+          "market_cap": 113432868120.26703,
+          "price": 1.8733931841347928
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 76474911697.4624
+          "market_cap": 76474911697.4624,
+          "price": 1.0002418040526544
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 70060705784.7345
+          "market_cap": 70060705784.7345,
+          "price": 124.63847125670826
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 26940887159.38013
+          "market_cap": 26940887159.38013,
+          "price": 0.28451512884091995
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 25868157681.23977
+          "market_cap": 25868157681.23977,
+          "price": 2948.0208467492857
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 20885288408.507973
+          "market_cap": 20885288408.507973,
+          "price": 0.12427372973988156
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14668507311.229305,
+          "price": 1.02033
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 13497851069.653244,
+          "price": 0.3692021183389627
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 12443234902.671246,
+          "price": 622.9872684225477
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12040733130.450693,
+          "price": 56.226079220882504
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11466365255.12961,
+          "price": 3605.4417078141723
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 10945078247.930008,
+          "price": 87584.50270256704
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10466438521.529768,
+          "price": 3206.018389944101
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9544278453.08282,
+          "price": 0.9996958701970902
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9054625368.119286,
+          "price": 3197.678522369587
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8975272377.866426,
+          "price": 0.9992183801728091
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8821016394.100388,
+          "price": 12.477360088688632
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8476396430.693812,
+          "price": 515.0500074654277
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 8363618920.73643,
+          "price": 453.40276851546963
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 7811249692.170971,
+          "price": 8.479742919884066
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7561772708.919523,
+          "price": 2948.8073811207028
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 7129809026.98273,
+          "price": 0.22046303940634807
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6420508835.8304205,
+          "price": 87731.42380843424
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6296148499.874573,
+          "price": 0.9985092074388825
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6175027844.318655,
+          "price": 25.976702005952752
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 6136165285.511812,
+          "price": 80.12069877623895
         }
       ]
     },
@@ -139,61 +439,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1753595375313.038
+          "market_cap": 1753595375313.038,
+          "price": 87822.90829076794
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 355840750170.65576
+          "market_cap": 355840750170.65576,
+          "price": 2947.8597605720547
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186710944191.7638
+          "market_cap": 186710944191.7638,
+          "price": 0.999388470477294
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 118310241153.67932
+          "market_cap": 118310241153.67932,
+          "price": 858.791572988669
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 112943419117.96327
+          "market_cap": 112943419117.96327,
+          "price": 1.8645585666057287
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 76384734230.46066
+          "market_cap": 76384734230.46066,
+          "price": 1.0000312646730498
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 70417541311.5998
+          "market_cap": 70417541311.5998,
+          "price": 125.19116108131975
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 26976578096.484463
+          "market_cap": 26976578096.484463,
+          "price": 0.2848908525100736
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 25913680716.477406
+          "market_cap": 25913680716.477406,
+          "price": 2946.4354064915037
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 20814514139.879044
+          "market_cap": 20814514139.879044,
+          "price": 0.12385595413327449
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14668507311.229305,
+          "price": 1.02033
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 13489166398.814186,
+          "price": 0.36797930964958125
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 12416875120.785889,
+          "price": 621.5054614103382
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 11989879584.6072,
+          "price": 55.99729143108642
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11484356107.917961,
+          "price": 3607.7877676366643
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 10957823496.419025,
+          "price": 87695.23107656476
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10464824641.293606,
+          "price": 3206.0613881296904
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9553376689.676205,
+          "price": 0.9995762561879503
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9056775035.87409,
+          "price": 3198.576434842173
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8977148297.003143,
+          "price": 0.9991656372241003
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8821204303.568842,
+          "price": 12.471343949066465
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8736742974.433548,
+          "price": 530.2014260612847
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 8368541183.6272335,
+          "price": 452.9174781726191
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 7813146353.4844885,
+          "price": 8.476563757907066
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7595388145.630028,
+          "price": 2949.539629533346
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 7131283269.458982,
+          "price": 0.22010947437871156
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6414791043.023431,
+          "price": 87826.759396203
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6299074949.641841,
+          "price": 0.9987032510510219
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6050770717.999582,
+          "price": 25.381971448479437
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 6026964313.365389,
+          "price": 78.62715804461851
         }
       ]
     },
@@ -204,61 +654,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1739794323451.9631
+          "market_cap": 1739794323451.9631,
+          "price": 87156.56266080117
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 354107974761.1568
+          "market_cap": 354107974761.1568,
+          "price": 2934.215601758931
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186622402821.9425
+          "market_cap": 186622402821.9425,
+          "price": 0.9989163153615535
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 117223103080.42976
+          "market_cap": 117223103080.42976,
+          "price": 851.1900442578194
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 111915660113.13713
+          "market_cap": 111915660113.13713,
+          "price": 1.8475397987365316
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 76016098863.74144
+          "market_cap": 76016098863.74144,
+          "price": 0.9997865671078336
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 69294749014.9203
+          "market_cap": 69294749014.9203,
+          "price": 123.09934938681572
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 26946505098.144924
+          "market_cap": 26946505098.144924,
+          "price": 0.28456734702486347
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 25796265562.069492
+          "market_cap": 25796265562.069492,
+          "price": 2933.4564071083337
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 20626508050.22613
+          "market_cap": 20626508050.22613,
+          "price": 0.12271386178229453
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14878241978.942986,
+          "price": 1.035325
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 12933986266.55497,
+          "price": 0.35282457142206264
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12112512915.495554,
+          "price": 56.57760012190323
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 11949718331.628296,
+          "price": 598.3845536895502
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11434428316.510096,
+          "price": 3590.879801809899
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 10845321037.777145,
+          "price": 86791.83600313975
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10409358703.534327,
+          "price": 3189.7871639847517
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9352597351.748322,
+          "price": 0.9996307480676354
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9039222183.242588,
+          "price": 3184.3057612363154
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8973434242.289875,
+          "price": 0.9988738851521219
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8912309424.714499,
+          "price": 540.9071346684877
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8699970114.969728,
+          "price": 12.288748245619757
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 8072537557.717344,
+          "price": 437.3860072642036
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 7904471582.738822,
+          "price": 8.575365210056326
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7736725721.912744,
+          "price": 2935.5158496528666
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 6996453723.210285,
+          "price": 0.216016327189852
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6313673429.109679,
+          "price": 87112.24379319954
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6293763322.89649,
+          "price": 0.9984662612733487
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6127634917.950636,
+          "price": 25.703790090015705
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 5996962080.922577,
+          "price": 78.21279540595069
         }
       ]
     },
@@ -269,61 +869,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1765833387995.6162
+          "market_cap": 1765833387995.6162,
+          "price": 88414.62856073362
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 358439004174.8074
+          "market_cap": 358439004174.8074,
+          "price": 2970.055474481003
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 187154085276.56702
+          "market_cap": 187154085276.56702,
+          "price": 0.9990185260447324
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 118493436505.37633
+          "market_cap": 118493436505.37633,
+          "price": 860.3384247437768
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 113760103518.08258
+          "market_cap": 113760103518.08258,
+          "price": 1.875100431832473
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 76008223428.32848
+          "market_cap": 76008223428.32848,
+          "price": 0.9998741904541762
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 70258329328.96147
+          "market_cap": 70258329328.96147,
+          "price": 124.85607450703749
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 27100437106.66173
+          "market_cap": 27100437106.66173,
+          "price": 0.28615609930335045
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 26127276744.53941
+          "market_cap": 26127276744.53941,
+          "price": 2968.2653664758172
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 20710065590.206562
+          "market_cap": 20710065590.206562,
+          "price": 0.1232611486337809
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 15008878408.745598,
+          "price": 1.0414937
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 12873702313.742434,
+          "price": 0.3511102528327861
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12204554334.42818,
+          "price": 56.996659587063355
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 11892010355.578306,
+          "price": 595.083362788234
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11582756948.604912,
+          "price": 3632.468859356316
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 11030811224.196604,
+          "price": 88269.51636379735
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10529532715.00477,
+          "price": 3227.809646094538
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9261690620.259285,
+          "price": 0.9996677091458883
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9143310006.897953,
+          "price": 3220.4375289977693
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8973958269.291178,
+          "price": 0.9987593463258563
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8785159465.169441,
+          "price": 12.411496240799679
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8686323578.353893,
+          "price": 527.837025189977
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 8429234944.346078,
+          "price": 9.145624691000295
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 8094958190.581239,
+          "price": 438.7386199610747
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7784896809.471792,
+          "price": 2969.8511779769133
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 6814703821.029218,
+          "price": 0.21045789833867026
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6474230267.766214,
+          "price": 88409.05209659199
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6293044293.149294,
+          "price": 0.9984554280285469
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6180895052.157524,
+          "price": 25.945301965420835
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 6038806161.987651,
+          "price": 78.74151962017234
         }
       ]
     },
@@ -334,61 +1084,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1747837206254.3643
+          "market_cap": 1747837206254.3643,
+          "price": 87520.18048742875
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 358047402285.7328
+          "market_cap": 358047402285.7328,
+          "price": 2966.7741798134107
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 187087814456.25006
+          "market_cap": 187087814456.25006,
+          "price": 0.9986627246946019
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 118876603739.66975
+          "market_cap": 118876603739.66975,
+          "price": 863.1574666286001
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 111584107850.57034
+          "market_cap": 111584107850.57034,
+          "price": 1.839340516228945
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 75371182421.47166
+          "market_cap": 75371182421.47166,
+          "price": 0.9998079595892425
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 70088211901.36029
+          "market_cap": 70088211901.36029,
+          "price": 124.5164171836461
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 26926567678.6245
+          "market_cap": 26926567678.6245,
+          "price": 0.2843529185433732
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 26152632752.457253
+          "market_cap": 26152632752.457253,
+          "price": 2965.3677582616856
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 19713328746.151676
+          "market_cap": 19713328746.151676,
+          "price": 0.11728672656235732
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14928490472.689796,
+          "price": 1.0363814
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 12198267524.25142,
+          "price": 0.33266848544608396
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12066726474.87968,
+          "price": 56.34764813319366
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 11969450104.121391,
+          "price": 599.1914937505035
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11600643946.6055,
+          "price": 3629.1052804132373
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 10896554792.400696,
+          "price": 87080.01511170523
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10534210059.858852,
+          "price": 3223.744012794819
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9176506468.137194,
+          "price": 0.9995721005645534
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9144722295.52812,
+          "price": 3219.307565921375
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8970715258.089924,
+          "price": 0.9984109465043649
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 8854648556.745373,
+          "price": 9.607225330082159
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8639775350.30677,
+          "price": 12.193492572013621
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8434509949.132746,
+          "price": 512.5024042378371
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 7996962007.014609,
+          "price": 433.5367837191708
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7777215395.693982,
+          "price": 2966.3636557858035
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6609507201.941157,
+          "price": 87472.32234194978
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 6496683793.411647,
+          "price": 0.20063049225260612
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6291538796.433158,
+          "price": 0.9981423702022519
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 6063552769.803161,
+          "price": 25.44065499392858
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 5885422553.583307,
+          "price": 76.74579310481673
         }
       ]
     },
@@ -399,61 +1299,211 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1767435531461.6892
+          "market_cap": 1768999667676.9236,
+          "price": 88587.1857379134
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 361748711421.4998
+          "market_cap": 363302539350.6773,
+          "price": 3010.798800063467
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186896583473.17484
+          "market_cap": 186885193686.45026,
+          "price": 0.9988482803518769
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 118610685768.89737
+          "market_cap": 118968731663.94092,
+          "price": 863.7245308791839
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 113374738552.02644
+          "market_cap": 113711851204.39865,
+          "price": 1.8738534568168714
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 75180221147.41966
+          "market_cap": 75195374632.80363,
+          "price": 0.999908971155665
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 70924607750.84409
+          "market_cap": 71426745364.72945,
+          "price": 126.84746535448373
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 27086413973.281506
+          "market_cap": 27013378542.550613,
+          "price": 0.2852680888792026
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 26431566552.72635
+          "market_cap": 26545989482.665825,
+          "price": 3009.133620745899
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 21245472506.24866
+          "market_cap": 21539799229.23538,
+          "price": 0.1280967383043975
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14668505248.170382,
+          "price": 1.0192229
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 13169742769.978325,
+          "price": 0.35914850186705377
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12170672099.055794,
+          "price": 56.91598569824251
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 11786953184.245584,
+          "price": 590.4488501038538
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 11764679216.220478,
+          "price": 3684.369496192591
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 11038343456.763514,
+          "price": 88435.80732613846
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10677698784.856411,
+          "price": 3274.794512758201
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9281603418.280746,
+          "price": 3265.55695570321
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9214696823.24809,
+          "price": 0.9996718173771896
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 9131900978.516,
+          "price": 12.90206106732613
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8974317022.31947,
+          "price": 0.9986488445236634
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 8849161071.956848,
+          "price": 9.591584519919916
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8679283439.338823,
+          "price": 527.5458917621565
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 7950307466.827755,
+          "price": 3011.3983951456007
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 7664999887.776458,
+          "price": 415.4535974726374
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 6706157641.764854,
+          "price": 0.20707973790990775
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6686403879.622012,
+          "price": 88710.64639805413
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6293555625.194439,
+          "price": 0.9986760981392391
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 6102166928.720691,
+          "price": 79.61856415023861
+        },
+        {
+          "id": "hyperliquid",
+          "symbol": "HYPE",
+          "name": "Hyperliquid",
+          "market_cap": 5888118178.2871895,
+          "price": 24.68776952884886
         }
       ]
     }
@@ -464,25 +1514,25 @@
         "id": "zcash",
         "symbol": "ZEC",
         "name": "Zcash",
-        "price": 525.7553944217958,
-        "change_7d_pct": 17.425304220941786,
-        "market_cap": 8658373424
+        "price": 527.5458917621565,
+        "change_7d_pct": 17.825204435241766,
+        "market_cap": 8679283439
       },
       {
         "id": "leo-token",
         "symbol": "LEO",
         "name": "LEO Token",
-        "price": 9.597887007142637,
-        "change_7d_pct": 12.998946829595406,
-        "market_cap": 8852366791
+        "price": 9.591584519919916,
+        "change_7d_pct": 12.924745662396372,
+        "market_cap": 8849161072
       },
       {
-        "id": "avalanche-2",
-        "symbol": "AVAX",
-        "name": "Avalanche",
-        "price": 13.600779796476974,
-        "change_7d_pct": 10.217837602893958,
-        "market_cap": 5835723056
+        "id": "chainlink",
+        "symbol": "LINK",
+        "name": "Chainlink",
+        "price": 12.90206106732613,
+        "change_7d_pct": 5.9619507615707,
+        "market_cap": 9131900979
       }
     ],
     "losers": [
@@ -490,25 +1540,25 @@
         "id": "monero",
         "symbol": "XMR",
         "name": "Monero",
-        "price": 414.07445964469457,
-        "change_7d_pct": -6.951048282928189,
-        "market_cap": 7649094459
+        "price": 415.4535974726374,
+        "change_7d_pct": -6.641134628090474,
+        "market_cap": 7664999888
+      },
+      {
+        "id": "hyperliquid",
+        "symbol": "HYPE",
+        "name": "Hyperliquid",
+        "price": 24.68776952884886,
+        "change_7d_pct": -4.076085870140098,
+        "market_cap": 5888118178
       },
       {
         "id": "stellar",
         "symbol": "XLM",
         "name": "Stellar",
-        "price": 0.20669894229412292,
-        "change_7d_pct": -3.1610540891719383,
-        "market_cap": 6709758851
-      },
-      {
-        "id": "bitcoin-cash",
-        "symbol": "BCH",
-        "name": "Bitcoin Cash",
-        "price": 587.6951431723478,
-        "change_7d_pct": -0.9866278505371768,
-        "market_cap": 11751687979
+        "price": 0.20707973790990775,
+        "change_7d_pct": -2.9826504377996206,
+        "market_cap": 6706157642
       }
     ]
   },
@@ -516,7 +1566,7 @@
     "series": [
       {
         "date": "2025-12-27",
-        "btc_pct": 60.0,
+        "btc_pct": 59.9,
         "eth_pct": 12.1,
         "stable_pct": 9.3
       },
@@ -553,7 +1603,7 @@
       {
         "date": "2026-01-02",
         "btc_pct": 59.8,
-        "eth_pct": 12.2,
+        "eth_pct": 12.3,
         "stable_pct": 9.1
       }
     ]

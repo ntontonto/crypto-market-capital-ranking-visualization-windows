@@ -85,6 +85,9 @@ class CryptoRankingShorts(Scene):
             for item in day_entry.get('items', []):
                 cid = item['id']
                 mcap = item['market_cap']
+                # Use price if available, else fallback to mcap (for consistency with Scene 2)
+                val = item.get('price', mcap) 
+                
                 symbol = item['symbol'].upper()
                 
                 if cid not in coin_series:
@@ -93,8 +96,8 @@ class CryptoRankingShorts(Scene):
                         "symbol": symbol,
                         "data": []
                     }
-                coin_series[cid]["data"].append((day_idx, mcap))
-                all_mcaps.append(mcap)
+                coin_series[cid]["data"].append((day_idx, val))
+                all_mcaps.append(val)
 
         # 2. Setup Axes (Logarithmic Y)
         # 2. Setup Axes
@@ -128,19 +131,34 @@ class CryptoRankingShorts(Scene):
                 "symbol": info['symbol']
             }
             
-        # Filter Top 5 and Bottom 5 Growth
-        # Sort by final value (last day's normalized value)
-        sorted_cids = sorted(details_map.keys(), key=lambda c: details_map[c]['coords'][-1][1], reverse=True)
+        # Filter "Best Return" Logic
+        # 1. Identify Top 3 Gainers (Best Return)
+        # 2. Identify Top 3 Losers (Worst Return)
+        # 3. Always include BTC and ETH
         
-        selected_cids = []
-        if len(sorted_cids) <= 10:
-            selected_cids = sorted_cids
-        else:
-            # Top 5
-            selected_cids.extend(sorted_cids[:5])
-            # Bottom 5 (reversed order for chart logic? No just standard list)
-            # Ensure no duplicates if list is small (handled by <= 10 check)
-            selected_cids.extend(sorted_cids[-5:])
+        # Sort by final value desc
+        sorted_by_growth = sorted(details_map.keys(), key=lambda c: details_map[c]['coords'][-1][1], reverse=True)
+        
+        top3_gainers = sorted_by_growth[:3]
+        top3_losers = sorted_by_growth[-3:] # These are bottom 3
+        
+        # Identify BTC/ETH ids (might vary by id, usually 'bitcoin', 'ethereum')
+        # We need to find them in the keys.
+        # Check defaults
+        btc_id = "bitcoin"
+        eth_id = "ethereum"
+        
+        # Build Set
+        final_selection = set()
+        final_selection.update(top3_gainers)
+        final_selection.update(top3_losers)
+        
+        if btc_id in details_map:
+            final_selection.add(btc_id)
+        if eth_id in details_map:
+            final_selection.add(eth_id)
+            
+        selected_cids = list(final_selection)
             
         # Filter details_map
         details_map = {k: details_map[k] for k in selected_cids}
@@ -195,7 +213,7 @@ class CryptoRankingShorts(Scene):
             stroke_opacity=0.5
         )
 
-        title_str = "Market Cap Growth"
+        title_str = "Price Growth"
         if len(days) >= 2:
             try:
                 start_d = datetime.datetime.strptime(top_data[0]['date'], "%Y-%m-%d").strftime("%m/%d")
