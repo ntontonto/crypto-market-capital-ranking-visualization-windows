@@ -1,9 +1,9 @@
 # Crypto Market Summary Video Generator
 
 Automatically generates a 60-second YouTube Short (9:16) visualizing:
-1.  **Top 10 Market Cap Race** (Last 7 Days)
-2.  **Top Movers** (Gainers/Losers 24h)
-3.  **Market Dominance** (BTC/ETH/Stable)
+1.  **Price Growth Race** (Top Gainers/Losers 7-Day)
+2.  **Top Movers & "Unusual" Activity** (24h)
+3.  **Market Signals** (Heatmap, Mood, Momentum)
 
 ## Requirements
 
