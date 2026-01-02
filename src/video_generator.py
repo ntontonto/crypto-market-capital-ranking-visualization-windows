@@ -3,6 +3,7 @@ import json
 import datetime
 import numpy as np
 import math
+import statistics
 
 # Configure for Vertical 9:16
 config.pixel_height = 1920
@@ -35,9 +36,9 @@ class CryptoRankingShorts(Scene):
         self.clear() # Clear chart
         self.render_movers(duration=15)
         
-        # Scene 3: Dominance
+        # Scene 3: Signal Board
         self.clear()
-        self.render_dominance(duration=10)
+        self.render_signal_board(duration=10)
 
     def _get_dummy_data(self):
         # Placeholder for dummy data if file not found
@@ -409,21 +410,80 @@ class CryptoRankingShorts(Scene):
         }
         return colors.get(symbol, WHITE) # Default
 
+
+    # --- Metrics & Helpers ---
+
+    def _compute_metrics(self):
+        """Compute all marketing metrics from top30_metrics in input."""
+        metrics = self.data.get("top30_metrics", [])
+        if not metrics:
+            return None
+            
+        # 1. Breadth
+        green_count = sum(1 for m in metrics if m.get('change_24h_pct', 0) > 0)
+        total = len(metrics)
+        breadth_pct = (green_count / total * 100) if total > 0 else 0
+        
+        # 2. Mood
+        # Thresholds: Risk-On >= 65%, Risk-Off <= 35%
+        # Refinement: Check mean return
+        all_changes = [m.get('change_24h_pct', 0) for m in metrics]
+        median_ret = statistics.median(all_changes) if all_changes else 0
+        
+        mood = "MIXED"
+        if breadth_pct >= 65 and median_ret > 0:
+            mood = "RISK-ON"
+        elif breadth_pct <= 35 and median_ret < 0:
+            mood = "RISK-OFF"
+            
+        # 3. Momentum Watch (Top 3)
+        # Score = rank(7d) + rank(24h) (lower is better)
+        
+        # Rank by 24h desc
+        sorted_24h = sorted(metrics, key=lambda x: x.get('change_24h_pct', 0), reverse=True)
+        rank_24h = {m['id']: i for i, m in enumerate(sorted_24h)}
+        
+        # Rank by 7d Mean desc
+        sorted_7d = sorted(metrics, key=lambda x: x.get('stats_7d', {}).get('mean', 0), reverse=True)
+        rank_7d = {m['id']: i for i, m in enumerate(sorted_7d)}
+        
+        momentum_scores = []
+        for m in metrics:
+            cid = m['id']
+            score = rank_24h.get(cid, 99) + rank_7d.get(cid, 99)
+            momentum_scores.append((cid, m['symbol'], score))
+            
+        # Sort by score asc (lower rank sum is better)
+        momentum_scores.sort(key=lambda x: x[2])
+        top_momentum = momentum_scores[:3]
+        
+        return {
+            "breadth": {
+                "green": green_count,
+                "total": total,
+                "pct": breadth_pct
+            },
+            "mood": mood,
+            "momentum": top_momentum,
+            "metrics_map": {m['id']: m for m in metrics} # ID -> Metric obj
+        }
+
     def render_movers(self, duration):
         # Prefer weekly_top_movers, fallback to today_top_movers
         weekly_data = self.data.get("weekly_top_movers")
         daily_data = self.data.get("today_top_movers")
         
+        metrics_data = self._compute_metrics()
+        metrics_map = metrics_data.get('metrics_map', {}) if metrics_data else {}
+        
         if weekly_data and weekly_data.get("gainers"):
             movers = weekly_data
             title_text = "7 Days Top Movers"
             pct_key = "change_7d_pct"
-            print(f"DEBUG: Using Weekly Movers: {len(movers.get('gainers', []))} gainers")
         else:
             movers = daily_data or {}
             title_text = "24h Top Movers"
             pct_key = "change_24h_pct"
-            print(f"DEBUG: Using Daily Movers: {len(movers.get('gainers', []))} gainers")
             
         gainers = movers.get("gainers", [])
         losers = movers.get("losers", [])
@@ -432,16 +492,11 @@ class CryptoRankingShorts(Scene):
         title = Text(title_text, font_size=48, color=GOLD).to_edge(UP, buff=1.5)
         self.play(Write(title))
         
-        # Layout
-        # Gainers on Left, Losers on Right
-        # Or top/bottom? Left/Right is better for vertical video?
-        # Actually vertical video is narrow. Maybe Gainers Top, Losers Bottom?
-        # Let's do Gainers (Green) followed by Losers (Red) list.
-        
-        # Helper to create row
+        # Helper to create row with UNUSUAL badge
         def create_row(item, is_gainer):
+            cid = item['id']
             color = GREEN if is_gainer else RED
-            sym = item['name'] # or symbol
+            sym = item['name'] 
             price = item['price']
             pct = item[pct_key]
             
@@ -458,12 +513,26 @@ class CryptoRankingShorts(Scene):
             sign = "+" if pct > 0 else ""
             t_pct = Text(f"{sign}{pct:.1f}%", font_size=32, color=color)
             
-            # Use columns?
-            # 3 columns: Sym (Left), Price (Center), Pct (Right)
-            # Adjust for vertical width (1080px is plenty)
-            
             row.add(t_sym, t_price, t_pct)
-            row.arrange(RIGHT, buff=0.5)
+            
+            # CHECK UNUSUAL BADGE
+            # Logic: |Z| >= 2.0 based on 7-day stats
+            metric = metrics_map.get(cid)
+            if metric:
+                c24 = metric.get('change_24h_pct', 0)
+                stats = metric.get('stats_7d', {})
+                mean = stats.get('mean', 0)
+                std = stats.get('std', 0)
+                
+                if std > 0:
+                    z = (c24 - mean) / std
+                    if abs(z) >= 2.0:
+                        badge = Text("UNUSUAL", font_size=16, color=YELLOW, weight=BOLD)
+                        bg = SurroundingRectangle(badge, color=YELLOW, fill_color=BLACK, fill_opacity=0.8, buff=0.1)
+                        b_group = VGroup(bg, badge)
+                        row.add(b_group)
+            
+            row.arrange(RIGHT, buff=0.4)
             return row
 
         # Gainers Group
@@ -486,7 +555,6 @@ class CryptoRankingShorts(Scene):
                 r = create_row(item, False)
                 l_group.add(r)
             l_group.arrange(DOWN, buff=0.4, aligned_edge=LEFT)
-            # Position below gainers
             if gainers:
                 l_group.next_to(g_group, DOWN, buff=1.0)
             else:
@@ -497,69 +565,43 @@ class CryptoRankingShorts(Scene):
             self.play(FadeIn(g_group, shift=RIGHT))
         if losers:
             self.play(FadeIn(l_group, shift=RIGHT))
-        # Wait remaining time
-        # We used ~ 6 * 0.8 = 4.8s + startup 1s = ~6s.
-        # Total duration 15s.
+
         self.wait(duration - 6)
 
-    def render_dominance(self, duration):
-        # Data: dominance.series (list of {date, btc_pct, eth_pct, stable_pct})
-        series = self.data.get("dominance", {}).get("series", [])
-        if not series:
+    def render_signal_board(self, duration):
+        """Scene 3: Marketing Signal Board"""
+        metrics = self._compute_metrics()
+        if not metrics:
             return
             
-        current = series[-1]
-        start = series[0]
-        
-        # Calculate Deltas
-        btc_delta = current['btc_pct'] - start['btc_pct']
-        eth_delta = current['eth_pct'] - start['eth_pct']
-        stable_delta = current['stable_pct'] - start['stable_pct']
-        
         # Title
-        title = Text("Market Dominance", font_size=48, color=BLUE).to_edge(UP, buff=2.0)
-        self.play(FadeIn(title))
+        title = Text("Market Signals", font_size=48, color=BLUE).to_edge(UP, buff=1.5)
         
-        # Lines
-        # BTC
-        btc_line = self._create_dom_line("Bitcoin", current['btc_pct'], btc_delta, ORANGE)
-        btc_line.shift(UP * 0.5)
+        # 1. Mood Panel
+        mood = metrics['mood']
+        mood_color = GREEN if mood == "RISK-ON" else (RED if mood == "RISK-OFF" else GRAY)
         
-        # ETH
-        eth_line = self._create_dom_line("Ethereum", current['eth_pct'], eth_delta, PURPLE)
-        eth_line.next_to(btc_line, DOWN, buff=1.0)
+        p1_label = Text("Market Mood:", font_size=36, color=WHITE)
+        p1_val = Text(mood, font_size=48, weight=BOLD, color=mood_color)
+        p1_group = VGroup(p1_label, p1_val).arrange(DOWN, buff=0.2)
         
-        # Stable
-        stable_line = self._create_dom_line("Stablecoins", current['stable_pct'], stable_delta, GREEN)
-        stable_line.next_to(eth_line, DOWN, buff=1.0)
+        # 2. Breadth Panel
+        b = metrics['breadth']
+        p2_label = Text("Breadth (Top 30):", font_size=36, color=WHITE)
+        p2_val = Text(f"{b['green']}/{b['total']} Green ({int(b['pct'])}%)", font_size=40, color=WHITE)
+        p2_group = VGroup(p2_label, p2_val).arrange(DOWN, buff=0.2)
         
-        self.play(
-            FadeIn(btc_line, shift=RIGHT),
-            FadeIn(eth_line, shift=RIGHT),
-            FadeIn(stable_line, shift=RIGHT),
-            run_time=2
-        )
+        # 3. Momentum Panel
+        mom = metrics['momentum'] # list of (cid, sym, score)
+        syms = ", ".join([x[1] for x in mom])
         
-        self.wait(duration - 3)
-
-    def _create_dom_line(self, label, value, delta, color):
-        grp = VGroup()
-        name = Text(label, font_size=36, color=WHITE, weight=BOLD)
+        p3_label = Text("Momentum Watch:", font_size=36, color=WHITE)
+        p3_val = Text(syms, font_size=40, color=GOLD)
+        p3_group = VGroup(p3_label, p3_val).arrange(DOWN, buff=0.2)
         
-        val_str = f"{value:.1f}%"
-        val = Text(val_str, font_size=36, color=color)
+        # Layout
+        main_group = VGroup(p1_group, p2_group, p3_group).arrange(DOWN, buff=1.0)
+        main_group.center()
         
-        # Delta
-        sign = "+" if delta >= 0 else ""
-        delta_str = f"({sign}{delta:.1f}pt)"
-        d_color = GREEN if delta >= 0 else RED
-        d_val = Text(delta_str, font_size=24, color=d_color)
-        
-        # Layout: Name ..... Value (Delta)
-        # Fixed width layout
-        name.move_to(LEFT * 2)
-        val.move_to(RIGHT * 1)
-        d_val.next_to(val, RIGHT, buff=0.2)
-        
-        grp.add(name, val, d_val)
-        return grp
+        self.play(FadeIn(title), FadeIn(main_group, shift=UP))
+        self.wait(duration - 2)

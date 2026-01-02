@@ -88,9 +88,13 @@ class CryptoDataFetcher:
                 "items": daily_snapshot # Include all (up to 30) so we can filter for Top/Bottom gainers in Renderer
             })
             
-        # 5. Build "weekly_top_movers" (7 Days Change)
+        # 5. Build "weekly_top_movers" AND "top30_metrics"
         # We calculate change from first date to last available date
+        import statistics
+
         movers_list = []
+        metrics_list = []
+        
         start_date = dates[0]
         end_date = dates[-1]
         
@@ -98,8 +102,8 @@ class CryptoDataFetcher:
             c_id = coin['id']
             prices = history_map.get(c_id, {}).get('prices', {})
             
+            # --- 5a. Weekly Movers Logic ---
             # Find closest available start/end prices
-            # (Sometimes specific dates are missing, fallback to earliest/latest)
             sorted_dates = sorted(prices.keys())
             if not sorted_dates:
                 continue
@@ -110,16 +114,52 @@ class CryptoDataFetcher:
             if not p_start: p_start = prices[sorted_dates[0]]
             if not p_end: p_end = prices[sorted_dates[-1]]
             
+            change_7d_pct = 0
             if p_start and p_start > 0:
-                change_pct = ((p_end - p_start) / p_start) * 100
+                change_7d_pct = ((p_end - p_start) / p_start) * 100
                 movers_list.append({
                     "id": c_id,
                     "symbol": coin['symbol'].upper(),
                     "name": coin['name'],
                     "price": p_end,
-                    "change_7d_pct": change_pct,
+                    "change_7d_pct": change_7d_pct,
                     "market_cap": coin['market_cap']
+                    # We will append 24h change here too for convenience if needed, 
+                    # but metrics_list covers detailed stats.
                 })
+
+            # --- 5b. Metrics Calculation (For Scene 2 Badges & Scene 3) ---
+            # Calculate Daily Returns from sorted history
+            sorted_prices = [prices[d] for d in sorted_dates if prices[d] > 0]
+            daily_returns = []
+            for i in range(1, len(sorted_prices)):
+                p0 = sorted_prices[i-1]
+                p1 = sorted_prices[i]
+                if p0 > 0:
+                    ret = ((p1 - p0) / p0) * 100
+                    daily_returns.append(ret)
+            
+            mean_7d = 0
+            std_7d = 0
+            if daily_returns:
+                mean_7d = statistics.mean(daily_returns)
+                if len(daily_returns) > 1:
+                    std_7d = statistics.stdev(daily_returns)
+            
+            # Use current 24h change from the API response
+            change_24h = coin.get('price_change_percentage_24h', 0)
+            
+            metrics_list.append({
+                "id": c_id,
+                "symbol": coin['symbol'].upper(),
+                "change_24h_pct": change_24h,
+                "stats_7d": {
+                    "mean": mean_7d,
+                    "std": std_7d,
+                    "daily_returns": daily_returns[-7:] # Store last 7 for debug/detailed use
+                }
+            })
+            
                 
         sorted_movers = sorted(movers_list, key=lambda x: x['change_7d_pct'], reverse=True)
         weekly_top_movers = {
@@ -127,13 +167,12 @@ class CryptoDataFetcher:
             "losers": sorted_movers[-3:][::-1] # Bottom 3 reversed (worst first)
         }
         
-        # Keep 24h as well if needed, but we focus on weekly here
-        
         final_json = {
             "asOf": datetime.utcnow().isoformat() + "Z",
             "currency": "usd",
             "top10_7d": top10_7d,
             "weekly_top_movers": weekly_top_movers,
+            "top30_metrics": metrics_list,
             "dominance": {
                 "series": dominance_series
             }
