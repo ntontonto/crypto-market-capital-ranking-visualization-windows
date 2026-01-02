@@ -1,0 +1,561 @@
+{
+  "asOf": "2026-01-02T02:16:28.076363Z",
+  "currency": "usd",
+  "top10_7d": [
+    {
+      "date": "2025-12-27",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1743187621561.159
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 353065144652.60986
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 186755060290.9574
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 114905145748.4669
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 111590253884.79008
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 76517544120.7733
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 68749899193.13757
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 26471777099.47492
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 25686689465.154934
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 18578288456.70482
+        }
+      ]
+    },
+    {
+      "date": "2025-12-28",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1753375412209.345
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 355905880030.65027
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 186731617227.19147
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 116342864989.3187
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 113432868120.26703
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 76474911697.4624
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 70060705784.7345
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 26940887159.38013
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 25868157681.23977
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 20885288408.507973
+        }
+      ]
+    },
+    {
+      "date": "2025-12-29",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1753595375313.038
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 355840750170.65576
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 186710944191.7638
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 118310241153.67932
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 112943419117.96327
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 76384734230.46066
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 70417541311.5998
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 26976578096.484463
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 25913680716.477406
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 20814514139.879044
+        }
+      ]
+    },
+    {
+      "date": "2025-12-30",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1739794323451.9631
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 354107974761.1568
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 186622402821.9425
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 117223103080.42976
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 111915660113.13713
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 76016098863.74144
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 69294749014.9203
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 26946505098.144924
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 25796265562.069492
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 20626508050.22613
+        }
+      ]
+    },
+    {
+      "date": "2025-12-31",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1765833387995.6162
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 358439004174.8074
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 187154085276.56702
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 118493436505.37633
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 113760103518.08258
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 76008223428.32848
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 70258329328.96147
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 27100437106.66173
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 26127276744.53941
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 20710065590.206562
+        }
+      ]
+    },
+    {
+      "date": "2026-01-01",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1747837206254.3643
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 358047402285.7328
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 187087814456.25006
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 118876603739.66975
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 111584107850.57034
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 75371182421.47166
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 70088211901.36029
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 26926567678.6245
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 26152632752.457253
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 19713328746.151676
+        }
+      ]
+    },
+    {
+      "date": "2026-01-02",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1767435531461.6892
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 361748711421.4998
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 186896583473.17484
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 118610685768.89737
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 113374738552.02644
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 75180221147.41966
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 70924607750.84409
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 27086413973.281506
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 26431566552.72635
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 21245472506.24866
+        }
+      ]
+    }
+  ],
+  "weekly_top_movers": {
+    "gainers": [
+      {
+        "id": "zcash",
+        "symbol": "ZEC",
+        "name": "Zcash",
+        "price": 525.7553944217958,
+        "change_7d_pct": 17.425304220941786,
+        "market_cap": 8658373424
+      },
+      {
+        "id": "leo-token",
+        "symbol": "LEO",
+        "name": "LEO Token",
+        "price": 9.597887007142637,
+        "change_7d_pct": 12.998946829595406,
+        "market_cap": 8852366791
+      },
+      {
+        "id": "avalanche-2",
+        "symbol": "AVAX",
+        "name": "Avalanche",
+        "price": 13.600779796476974,
+        "change_7d_pct": 10.217837602893958,
+        "market_cap": 5835723056
+      }
+    ],
+    "losers": [
+      {
+        "id": "monero",
+        "symbol": "XMR",
+        "name": "Monero",
+        "price": 414.07445964469457,
+        "change_7d_pct": -6.951048282928189,
+        "market_cap": 7649094459
+      },
+      {
+        "id": "stellar",
+        "symbol": "XLM",
+        "name": "Stellar",
+        "price": 0.20669894229412292,
+        "change_7d_pct": -3.1610540891719383,
+        "market_cap": 6709758851
+      },
+      {
+        "id": "bitcoin-cash",
+        "symbol": "BCH",
+        "name": "Bitcoin Cash",
+        "price": 587.6951431723478,
+        "change_7d_pct": -0.9866278505371768,
+        "market_cap": 11751687979
+      }
+    ]
+  },
+  "dominance": {
+    "series": [
+      {
+        "date": "2025-12-27",
+        "btc_pct": 60.0,
+        "eth_pct": 12.1,
+        "stable_pct": 9.3
+      },
+      {
+        "date": "2025-12-28",
+        "btc_pct": 59.8,
+        "eth_pct": 12.1,
+        "stable_pct": 9.2
+      },
+      {
+        "date": "2025-12-29",
+        "btc_pct": 59.8,
+        "eth_pct": 12.1,
+        "stable_pct": 9.2
+      },
+      {
+        "date": "2025-12-30",
+        "btc_pct": 59.7,
+        "eth_pct": 12.2,
+        "stable_pct": 9.2
+      },
+      {
+        "date": "2025-12-31",
+        "btc_pct": 59.9,
+        "eth_pct": 12.2,
+        "stable_pct": 9.1
+      },
+      {
+        "date": "2026-01-01",
+        "btc_pct": 59.7,
+        "eth_pct": 12.2,
+        "stable_pct": 9.2
+      },
+      {
+        "date": "2026-01-02",
+        "btc_pct": 59.8,
+        "eth_pct": 12.2,
+        "stable_pct": 9.1
+      }
+    ]
+  }
+}

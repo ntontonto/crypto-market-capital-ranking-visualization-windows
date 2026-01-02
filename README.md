@@ -1,6 +1,9 @@
-# Crypto Top 20 Ranking Video Generator
+# Crypto Market Summary Video Generator
 
-Automatically generates a YouTube Short (9:16) visualizing the Top 20 Crypto Market Cap.
+Automatically generates a 60-second YouTube Short (9:16) visualizing:
+1.  **Top 10 Market Cap Race** (Last 7 Days)
+2.  **Top Movers** (Gainers/Losers 24h)
+3.  **Market Dominance** (BTC/ETH/Stable)
 
 ## Requirements
 
@@ -21,7 +24,7 @@ Automatically generates a YouTube Short (9:16) visualizing the Top 20 Crypto Mar
 2.  **Setup Python Environment**:
     
     > [!IMPORTANT]
-    > We use a **Virtual Environment (venv)** to manage Python dependencies (`requests`, etc.) while relying on the **System Manim** (installed via Brew) for video rendering. This avoids compatibility issues between `pip`-installed Manim and system FFmpeg.
+    > We use a **Virtual Environment (venv)** to manage Python dependencies (`requests`, etc.) while relying on the **System Manim** (installed via Brew) for video rendering.
 
     ```bash
     # Create virtual environment
@@ -42,16 +45,57 @@ Automatically generates a YouTube Short (9:16) visualizing the Top 20 Crypto Mar
     ```
 
 2.  **Run Generator**:
+    
+    **Option A: Fetch Fresh Data (Default)**
+    Fetches latest data from CoinGecko (Top 10 ranking history, movers, dominance) and generates video.
     ```bash
-    python3 main.py
+    python3 main.py --fetch
+    ```
+    
+    **Option B: Use Specific Input File**
+    Generates video from a provided JSON file (skips fetching).
+    ```bash
+    python3 main.py --input input.sample.json
     ```
 
-    *   Fetches data from CoinGecko (saved to `./cache/`).
-    *   Generates video using Manim.
-    *   Output saved to `./out/crypto_top20_YYYY-MM-DD.mp4`.
+    **Output**: Saved to `./out/crypto_summary_YYYY-MM-DD.mp4`.
 
-    **Options**:
+    **Other Options**:
     *   `--dry-run`: Fetch data only, skip video generation.
+
+## Input JSON Specification
+
+The generator accepts a JSON file with the following structure:
+
+```json
+{
+  "asOf": "2026-01-02T00:00:00Z",
+  "currency": "usd",
+  "top10_7d": [
+    {
+      "date": "2025-12-27",
+      "items": [
+        {"id":"bitcoin","symbol":"BTC","name":"Bitcoin","market_cap": 123456789},
+        ... (10 items)
+      ]
+    },
+    ... (7 days)
+  ],
+  "today_top_movers": {
+    "gainers": [ {"id":"sol","symbol":"SOL","change_24h_pct": 9.87, "price": 123.45, ...} ],
+    "losers": [ ... ]
+  },
+  "dominance": {
+    "series": [
+      {"date":"2025-12-27","btc_pct": 49.1, "eth_pct": 17.2, "stable_pct": 8.4},
+      ...
+    ]
+  }
+}
+```
+
+3.  **Clean Up**:
+    Remove temporary files, cache, or generated videos.
 
 3.  **Clean Up**:
     Remove temporary files, cache, or generated videos.
