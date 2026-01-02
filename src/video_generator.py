@@ -12,7 +12,7 @@ config.pixel_width = 1080
 config.frame_height = 16.0
 config.frame_width = 9.0
 
-class CryptoRankingShorts(Scene):
+class CryptoRankingShorts(MovingCameraScene):
     def construct(self):
         # Configuration
         self.camera.background_color = "#1e1e1e"
@@ -185,12 +185,12 @@ class CryptoRankingShorts(Scene):
             y_max = max(all_y_values)
             y_min = math.floor(y_min / 5) * 5 - 5
             y_max = math.ceil(y_max / 5) * 5 + 5
-            
+            y_mid = (y_min + y_max) / 2
         axes = Axes(
             x_range=[0, 6, 1],
             y_range=[y_min, y_max, (y_max - y_min) / 5],
-            x_length=9,
-            y_length=12,
+            x_length=7,
+            y_length=10,
             axis_config={"color": "#444444"},
             tips=False
         ).to_edge(DOWN, buff=2.0)
@@ -218,16 +218,12 @@ class CryptoRankingShorts(Scene):
             stroke_opacity=0.5
         )
 
-        title_str = "Price Growth"
-        if len(days) >= 2:
-            try:
-                start_d = datetime.datetime.strptime(top_data[0]['date'], "%Y-%m-%d").strftime("%m/%d")
-                end_d = datetime.datetime.strptime(top_data[-1]['date'], "%Y-%m-%d").strftime("%m/%d")
-                title_str += f" ({start_d} - {end_d})"
-            except:
-                title_str += " (7 Days)"
-                
-        title = Text(title_str, font_size=36, weight=BOLD).to_edge(UP, buff=1.0)
+        title = Text("Crypto Race: Who Won?", font_size=36, weight=BOLD).to_edge(UP, buff=1.5)
+        
+        # Camera Setup (Pre-FadeIn)
+        self.camera.frame.save_state()
+        initial_center = axes.c2p(3, y_mid) # Center of 0-6 range
+        self.camera.frame.set(width=9).move_to(initial_center)
         
         self.play(
             FadeIn(axes),
@@ -393,14 +389,31 @@ class CryptoRankingShorts(Scene):
         lines_group.add_updater(update_lines)
         
         # Animate
+        # Camera Animation
+        # Zoom-In to "Race Start View"
+        
+        # 2. Animate Zoom-In to "Race Start View"
+        race_start_center = axes.c2p(1.5, y_mid)
+        self.play(
+            self.camera.frame.animate.set(width=7).move_to(race_start_center),
+            run_time=2.0,
+            rate_func=smooth
+        )
+        self.wait(0.5)
+        
         self.play(
             time_tracker.animate.set_value(6),
+            # Pan camera to the right end (center around day 4.5)
+            self.camera.frame.animate.move_to(axes.c2p(4.5, y_mid)),
             run_time=duration - 5,
             rate_func=linear
         )
         
         lines_group.remove_updater(update_lines)
-        self.wait(3)
+        
+        # Restore camera for next scene
+        self.play(Restore(self.camera.frame), run_time=1.0)
+        self.wait(0.5)
 
     def _get_coin_color(self, symbol):
         colors = {
@@ -507,8 +520,12 @@ class CryptoRankingShorts(Scene):
         losers = movers.get("losers", [])
         
         # Title
+        # Title
         title = Text(title_text, font_size=48, color=GOLD).to_edge(UP, buff=1.5)
-        self.play(Write(title))
+        # Subtitle
+        subtitle = Text("Notable volatility - keep an eye on these.", font_size=24, color=GRAY).next_to(title, DOWN, buff=0.2)
+        
+        self.play(Write(title), FadeIn(subtitle))
         
         # Helper to create row with UNUSUAL badge
         def create_row(item, is_gainer):
@@ -615,7 +632,19 @@ class CryptoRankingShorts(Scene):
         breadth_str = f"{b['green']}/{b['total']} Up"
         
         header_text = Text(f"{mood} | {breadth_str}", font_size=36, color=mood_color)
+        header_text = Text(f"{mood} | {breadth_str}", font_size=36, color=mood_color)
         header_text.next_to(title, DOWN, buff=0.3)
+        
+        # Insight Text
+        insight_text = ""
+        if mood == "RISK-ON":
+            insight_text = "Trend is strong. Momentum favors bulls."
+        elif mood == "RISK-OFF":
+            insight_text = "Market is weak. Caution advised."
+        else: # MIXED
+            insight_text = "Market is undecided. Watch for breakouts."
+            
+        insight = Text(insight_text, font_size=24, color=GRAY).next_to(header_text, DOWN, buff=0.2)
         
         # 2. Heatmap Grid (5 cols x 6 rows = 30)
         grid_group = VGroup()
@@ -667,7 +696,7 @@ class CryptoRankingShorts(Scene):
         footer_group.to_edge(DOWN, buff=3.0)
         
         # Animation
-        self.play(FadeIn(title), FadeIn(header_text))
+        self.play(FadeIn(title), FadeIn(header_text), FadeIn(insight))
         
         # Animate Grid: Lagged Start
         self.play(
