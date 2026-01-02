@@ -598,7 +598,7 @@ class CryptoRankingShorts(Scene):
         grid_group = VGroup()
         
         # Cell settings
-        cell_size = 1.4
+        cell_size = 1.15
         padding = 0.1
         
         for i, m in enumerate(metrics_list[:30]): # Ensure max 30
@@ -608,11 +608,10 @@ class CryptoRankingShorts(Scene):
             # Color logic
             if c24 > 0:
                 fill_col = GREEN
-                # Optional: Intensity? For simplicity: standard GREEN
-                if c24 > 5.0: fill_col = "#00FF00" # Brighter
+                if c24 > 5.0: fill_col = "#00FF00" 
             elif c24 < 0:
                 fill_col = RED
-                if c24 < -5.0: fill_col = "#FF0000" # Bright Red
+                if c24 < -5.0: fill_col = "#FF0000"
             else:
                 fill_col = GRAY
                 
@@ -620,8 +619,8 @@ class CryptoRankingShorts(Scene):
             cell.set_fill(fill_col, opacity=0.8)
             cell.set_stroke(BLACK, width=2)
             
-            label = Text(sym, font_size=20, weight=BOLD, color=BLACK if c24 > 0 else WHITE)
-            # Scale text if too long
+            # Text size relative to cell
+            label = Text(sym, font_size=int(18 * (cell_size/1.4)), weight=BOLD, color=BLACK if c24 > 0 else WHITE)
             if len(sym) > 4:
                 label.scale(0.8)
                 
@@ -630,16 +629,19 @@ class CryptoRankingShorts(Scene):
             
         # Arrange in grid
         grid_group.arrange_in_grid(rows=6, cols=5, buff=padding)
-        grid_group.center()
+        grid_group.center().shift(UP * 0.5) # Move grid up slightly
         
         # 3. Footer: Momentum
         mom = metrics_data['momentum'] # list of (cid, sym, score)
         syms = ", ".join([x[1] for x in mom])
         
         footer_label = Text("Momentum Watch:", font_size=28, color=GRAY)
+        footer_desc = Text("(Combined 24h & 7d Strength)", font_size=18, color=GRAY).scale(0.8)
         footer_val = Text(syms, font_size=32, color=GOLD)
-        footer_group = VGroup(footer_label, footer_val).arrange(DOWN, buff=0.15)
-        footer_group.to_edge(DOWN, buff=1.5)
+        
+        footer_group = VGroup(footer_label, footer_desc, footer_val).arrange(DOWN, buff=0.1)
+        # Move higher to avoid Shorts UI overlay (approx bottom 20% is risky)
+        footer_group.to_edge(DOWN, buff=3.0)
         
         # Animation
         self.play(FadeIn(title), FadeIn(header_text))
