@@ -91,7 +91,7 @@ def main():
         "--resolution", "1080,1920", # Vertical
         "--media_dir", "./out_temp",
         "--disable_caching",
-        "src/video_generator.py",
+        os.path.join("src", "video_generator.py"),
         "CryptoRankingShorts"
     ]
     
