@@ -12,120 +12,10 @@ config.pixel_width = 1080
 config.frame_height = 16.0
 config.frame_width = 9.0
 
-# --- SAFE AREA CONFIGURATION (YOUTUBE SHORTS) ---
-# Units are Manim Frame Units (1.0 unit approx 120px)
-class SafeAreaConfig:
-    MARGIN_LEFT = 1.0
-    MARGIN_RIGHT = 2.0  # Right UI Column (Like/Share/Comment)
-    MARGIN_TOP = 1.833  # Top UI (Search/Back)
-    MARGIN_BOTTOM = 2.4 # Bottom UI (Title/Channel/Desc)
-
-DEBUG_SAFE = False
-
-class SafeArea:
-    def __init__(self, scene, config=SafeAreaConfig):
-        self.scene = scene
-        self.config = config
-
-    def bounds(self):
-        """Returns (left, right, bottom, top) in scene coordinates based on CURRENT camera frame."""
-        frame = self.scene.camera.frame
-        f_left = frame.get_left()[0]
-        f_right = frame.get_right()[0]
-        f_top = frame.get_top()[1]
-        f_bottom = frame.get_bottom()[1]
-        
-        # Apply margins relative to frame edges
-        safe_left = f_left + self.config.MARGIN_LEFT
-        safe_right = f_right - self.config.MARGIN_RIGHT
-        safe_top = f_top - self.config.MARGIN_TOP
-        safe_bottom = f_bottom + self.config.MARGIN_BOTTOM
-        
-        return safe_left, safe_right, safe_bottom, safe_top
-
-    def width(self):
-        l, r, b, t = self.bounds()
-        return r - l
-
-    def height(self):
-        l, r, b, t = self.bounds()
-        return t - b
-
-    def center(self):
-        l, r, b, t = self.bounds()
-        return np.array([(l + r) / 2, (b + t) / 2, 0])
-
-    def place(self, mobject, ux, uy):
-        """Places mobject at normalized coordinates (0..1) within safe area."""
-        l, r, b, t = self.bounds()
-        x = l + (r - l) * ux
-        y = b + (t - b) * uy
-        mobject.move_to(np.array([x, y, 0]))
-        return mobject
-
-    def clamp(self, mobject, strict_right=True):
-        """Shifts mobject to ensure it stays strictly within safe bounds."""
-        l, r, b, t = self.bounds()
-        
-        # Get edges of mobject
-        mob_l = mobject.get_left()[0]
-        mob_r = mobject.get_right()[0]
-        mob_t = mobject.get_top()[1]
-        mob_b = mobject.get_bottom()[1]
-        
-        shift_vec = np.array([0., 0., 0.])
-        
-        # Horizontal Clamp
-        if strict_right and mob_r > r:
-            shift_vec[0] = r - mob_r
-        if mob_l < l:
-             shift_vec[0] = l - mob_l # Left clamp takes precedence if conflicting?
-             
-        # Vertical Clamp
-        if mob_t > t:
-            shift_vec[1] = t - mob_t
-        if mob_b < b:
-            shift_vec[1] = b - mob_b
-            
-        if np.linalg.norm(shift_vec) > 0:
-            mobject.shift(shift_vec)
-            return True
-        return False
-        
-    def debug_overlay(self):
-        if not DEBUG_SAFE: return VGroup()
-        rect = Rectangle(color=RED, stroke_width=4)
-        def update_rect(m):
-            l, r, b, t = self.bounds()
-            m.stretch_to_fit_width(r - l)
-            m.stretch_to_fit_height(t - b)
-            m.move_to(np.array([(l + r) / 2, (b + t) / 2, 0]))
-        
-        rect.add_updater(update_rect)
-        # Initialize
-        update_rect(rect)
-        return rect
-
-
-def fit_text(text_mob, max_width, min_scale=0.75):
-    """Scales down text to fit max_width, down to min_scale. If still too big, truncates."""
-    if text_mob.width > max_width:
-        ratio = max_width / text_mob.width
-        if ratio >= min_scale:
-            text_mob.scale(ratio)
-        else:
-            text_mob.scale(min_scale)
-            # Truncation logic could go here if needed, but simple scaling is often enough
-    return text_mob
-
 class CryptoRankingShorts(MovingCameraScene):
     def construct(self):
         # Configuration
         self.camera.background_color = "#1e1e1e"
-        self.safe = SafeArea(self)
-        self.add(self.safe.debug_overlay())
-
-
         self.camera.frame_height = 16
         self.camera.frame_width = 9
         
@@ -197,8 +87,8 @@ class CryptoRankingShorts(MovingCameraScene):
             for item in day_entry.get('items', []):
                 cid = item['id']
                 mcap = item['market_cap']
-                # Use price if available, else fallback to mcap (for consistency with Scene 2)
-                val = item.get('price', mcap) 
+                # Use price strictly as requested
+                val = item.get('price', 0) 
                 
                 symbol = item['symbol'].upper()
                 img = item.get('image', '')
@@ -290,6 +180,7 @@ class CryptoRankingShorts(MovingCameraScene):
             
         if not all_y_values:
             y_min, y_max = 90, 110
+            y_mid = 100
         else:
             y_min = min(all_y_values)
             y_max = max(all_y_values)
@@ -303,7 +194,7 @@ class CryptoRankingShorts(MovingCameraScene):
             y_length=10,
             axis_config={"color": "#444444"},
             tips=False
-        ).to_edge(DOWN, buff=2.0)
+        ).to_edge(DOWN, buff=3.0) # Raised from 2.0 to 3.0 (10% lift)
         
         x_labels = VGroup()
         if len(days) == 7:
@@ -328,46 +219,30 @@ class CryptoRankingShorts(MovingCameraScene):
             stroke_opacity=0.5
         )
 
-        title = Text("Crypto Race: Who Won?", font_size=36, weight=BOLD)
-        # Place title at top-center of SAFE area
-        # Use initial camera frame for placement (since we reset camera later)
-        # We need a temporary safe area context or just hardcode for the start frame
-        # Actually, self.safe.place uses CURRENT camera. 
-        # AT THIS MOMENT, camera is default (0,0).
-        # We want to place it safely.
+        # Date Range Subtitle
+        start_date = top_data[0].get('date', 'Start')
+        end_date = top_data[-1].get('date', 'End')
         
-        # Important: We move camera later to (3, y_mid) and width=9.
-        # So we should place elements RELATIVE to the axes or specific coordinates, 
-        # OR ensure we clamp/place them relative to the camera view we are about to set.
+        title = Text("Crypto price change", font_size=36, weight=BOLD)
+        subtitle = Text(f"{start_date} - {end_date}", font_size=24, color=GRAY)
         
-        # Since the title is static on the screen (FadeIn), it usually stays relative to camera?
-        # No, Mobjects are in World Coordinates. Camera moves over them.
-        # If we want the Title to be "Fixed to Screen", we should add it to self.camera.frame?
-        # Manim's `add_fixed_in_frame_mobjects` is perfect for UI that shouldn't move (Titles, Legends).
-        # THIS IS THE KEY for Mobile UI. Static UI elements should be fixed.
+        header_group = VGroup(title, subtitle).arrange(DOWN, buff=0.1)
+        # We want to place it fixed in frame.
+        # Initial placement relative to axes or screen?
+        # Let's fix it relative to the CAMERA FRAME.
         
-        # CHANGE: Add Title as fixed_in_frame_mobject.
-        # CHANGE: Add Title as regular mobject with updater
-        self.add(title)
+        self.add(header_group)
         
-        def update_title_pos(m):
-             self.safe.place(m, 0.5, 0.95)
-             
-        title.add_updater(update_title_pos)
-        update_title_pos(title) # Initial pos
-        # Now place it in safe area relative to fixed frame
-        # Fixed frame is usually range approx [-frame_width/2, frame_width/2]
-        # self.safe.place() works on scene coords.
-        # For fixed mobjects, screen coords match scene coords if camera is default.
-        # Let's align it safely.
-        
-        # Manual placement for fixed title:
-        # Top of safe area = frame_height/2 - margin_top
-        # y = 16/2 - 1.833 = 8 - 1.833 = 6.167
-        # title.move_to([0, 6.167 - title.height/2, 0])
-        safe_top_y = config.frame_height/2 - SafeAreaConfig.MARGIN_TOP
-        title.move_to([0, safe_top_y - 0.5, 0]) # Little padding
-
+        def update_header(m):
+            # Keep header 1.5 units from top of CURRENT camera frame
+            c = self.camera.frame.get_center()
+            h = self.camera.frame.get_height()
+            top_y = c[1] + h/2
+            m.move_to([c[0], top_y - 1.5, 0])
+            
+        header_group.add_updater(update_header)
+        # Initial update
+        update_header(header_group)
         
         # Camera Setup (Pre-FadeIn)
         self.camera.frame.save_state()
@@ -379,7 +254,7 @@ class CryptoRankingShorts(MovingCameraScene):
             FadeIn(x_labels),
             FadeIn(y_labels),
             Create(baseline),
-            Write(title),
+            Write(header_group),
             run_time=2
         )
 
@@ -405,7 +280,7 @@ class CryptoRankingShorts(MovingCameraScene):
             
             # Use Group to hold ImageMobject (non-vector) + Text (vector)
             label_container = Group()
-            dot = self._create_icon(details.get('image'), size=0.5)
+            dot = self._create_icon(details.get('image'), size=0.5, coin_id=cid)
             # Ensure it's centered on point later
             # Dot is center-anchored by default, ImageMobject is too.
             
@@ -533,12 +408,6 @@ class CryptoRankingShorts(MovingCameraScene):
                     parts[1].next_to(parts[0], RIGHT, buff=0.15)
                     pct_num.next_to(parts[1], RIGHT, buff=0.05) # Need to explicitly re-align pct_num
                     parts[3].next_to(pct_num, RIGHT, buff=0.05) # Text
-                    
-                    # --- SAFE AREA CLAMP ---
-                    # Clamp the entire label container to be inside Safe Area
-                    # This must happen AFTER all positioning
-                    self.safe.clamp(label, strict_right=True)
-                    # -----------------------
 
         # Attach updater
         lines_group.add_updater(update_lines)
@@ -588,8 +457,12 @@ class CryptoRankingShorts(MovingCameraScene):
 
     # --- Metrics & Helpers ---
 
-    def _create_icon(self, image_path, size=0.5):
-        """Creates an ImageMobject from path, or a fallback Dot."""
+    def _create_icon(self, image_path, size=0.5, coin_id=None):
+        """
+        Creates an ImageMobject from path, or a fallback Dot.
+        If image_path is faulty, tries assets/coins/{coin_id}.png.
+        """
+        # 1. Try provided path
         if image_path and os.path.exists(image_path):
             try:
                 img = ImageMobject(image_path)
@@ -597,6 +470,19 @@ class CryptoRankingShorts(MovingCameraScene):
                 return img
             except:
                 pass
+                
+        # 2. Try Fallback: assets/coins/{coin_id}.png
+        if coin_id:
+            fallback_path = f"assets/coins/{coin_id}.png"
+            if os.path.exists(fallback_path):
+                try:
+                    img = ImageMobject(fallback_path)
+                    img.height = size
+                    return img
+                except:
+                    pass
+        
+        # 3. Fallback to Dot
         return Dot(radius=size/4, color=GRAY)
 
     def _compute_metrics(self):
@@ -676,16 +562,11 @@ class CryptoRankingShorts(MovingCameraScene):
         
         # Title
         # Title
-        # Title
-        title = Text(title_text, font_size=48, color=GOLD)
-        subtitle = Text("Notable volatility - keep an eye on these.", font_size=24, color=GRAY)
+        title = Text(title_text, font_size=48, color=GOLD).to_edge(UP, buff=1.5)
+        # Subtitle
+        subtitle = Text("Notable volatility - keep an eye on these.", font_size=24, color=GRAY).next_to(title, DOWN, buff=0.2)
         
-        # Group Title
-        header = VGroup(title, subtitle).arrange(DOWN, buff=0.2)
-        # Place Header at Top of Safe Area
-        self.safe.place(header, 0.5, 0.95)
-        
-        self.play(Write(header))
+        self.play(Write(title), FadeIn(subtitle))
         
         # Helper to create row with UNUSUAL badge
         def create_row(item, is_gainer):
@@ -703,8 +584,6 @@ class CryptoRankingShorts(MovingCameraScene):
             
             # Symbol
             t_sym = Text(sym, font_size=32, weight=BOLD)
-            fit_text(t_sym, 3.5) # Max width 3.5 units
-
             # Price
             if price > 1.0:
                 p_str = f"\${price:,.2f}"
@@ -757,22 +636,10 @@ class CryptoRankingShorts(MovingCameraScene):
                 r = create_row(item, False)
                 l_group.add(r)
             l_group.arrange(DOWN, buff=0.4, aligned_edge=LEFT)
-
             if gainers:
-                l_group.next_to(g_group, DOWN, buff=0.5)
+                l_group.next_to(g_group, DOWN, buff=1.0)
             else:
-                pass # l_group layout handled below
-                
-        # Layout Groups in Safe Area
-        # Combine g_group and l_group
-        main_content = VGroup()
-        if gainers: main_content.add(g_group)
-        if losers: main_content.add(l_group)
-        
-        main_content.arrange(DOWN, buff=0.5, aligned_edge=LEFT)
-        # Center in remaining safe space (below header)
-        self.safe.place(main_content, 0.5, 0.45)
-
+                l_group.to_edge(LEFT, buff=1.0)
                 
         # Animation
         if gainers:
@@ -795,10 +662,21 @@ class CryptoRankingShorts(MovingCameraScene):
         # (Top Left = Bitcoin, etc. usually makes sense)
         metrics_list = self.data.get("top30_metrics", [])
             
-        title = Text("Market Signals", font_size=40, color=BLUE)
-        header_text = Text(f"{mood} | {breadth_str}", font_size=36, color=mood_color)
+        # Title
+        title = Text("Market Signals", font_size=40, color=BLUE).to_edge(UP, buff=1.0)
         
-        # Insight
+        # 1. Header: Mood & Breadth Text
+        mood = metrics_data['mood']
+        mood_color = GREEN if mood == "RISK-ON" else (RED if mood == "RISK-OFF" else GRAY)
+        
+        b = metrics_data['breadth']
+        breadth_val = b.get('pct', 50)
+        breadth_str = f"{breadth_val:.0f}% are gainers" # Fixed variable definition
+        
+        header_text = Text(f"{mood} | {breadth_str}", font_size=36, color=mood_color)
+        header_text.next_to(title, DOWN, buff=0.3)
+        
+        # Insight Text
         insight_text = ""
         if mood == "RISK-ON":
             insight_text = "Trend is strong. Momentum favors bulls."
@@ -807,11 +685,7 @@ class CryptoRankingShorts(MovingCameraScene):
         else: # MIXED
             insight_text = "Market is undecided. Watch for breakouts."
             
-        insight = Text(insight_text, font_size=24, color=GRAY)
-        
-        # Assembly Header
-        header_group = VGroup(title, header_text, insight).arrange(DOWN, buff=0.2)
-        self.safe.place(header_group, 0.5, 0.92)
+        insight = Text(insight_text, font_size=24, color=GRAY).next_to(header_text, DOWN, buff=0.2)
         
         # 2. Heatmap Grid (5 cols x 6 rows = 30)
         grid_group = VGroup()
@@ -839,21 +713,16 @@ class CryptoRankingShorts(MovingCameraScene):
             cell.set_stroke(BLACK, width=2)
             
             # Text size relative to cell
-            label = Text(sym, font_size=24, weight=BOLD, color=BLACK if c24 > 0 else WHITE)
-            fit_text(label, cell_size * 0.9)
-            
+            label = Text(sym, font_size=int(18 * (cell_size/1.4)), weight=BOLD, color=BLACK if c24 > 0 else WHITE)
+            if len(sym) > 4:
+                label.scale(0.8)
+                
             cell_grp = VGroup(cell, label)
             grid_group.add(cell_grp)
             
         # Arrange in grid
         grid_group.arrange_in_grid(rows=6, cols=5, buff=padding)
-        # Scale grid to fit width inside margins if needed
-        max_w = self.safe.width() * 0.9
-        if grid_group.width > max_w:
-            grid_group.scale(max_w / grid_group.width)
-            
-        self.safe.place(grid_group, 0.5, 0.5)
-
+        grid_group.center().shift(UP * 0.5) # Move grid up slightly
         
         # 3. Footer: Momentum
         mom = metrics_data['momentum'] # list of (cid, sym, score)
@@ -865,10 +734,7 @@ class CryptoRankingShorts(MovingCameraScene):
         
         footer_group = VGroup(footer_label, footer_desc, footer_val).arrange(DOWN, buff=0.1)
         # Move higher to avoid Shorts UI overlay (approx bottom 20% is risky)
-        footer_group = VGroup(footer_label, footer_desc, footer_val).arrange(DOWN, buff=0.1)
-        # Place footer at bottom safety line
-        self.safe.place(footer_group, 0.5, 0.08)
-
+        footer_group.to_edge(DOWN, buff=3.0)
         
         # Animation
         self.play(FadeIn(title), FadeIn(header_text), FadeIn(insight))

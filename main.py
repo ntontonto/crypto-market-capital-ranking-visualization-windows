@@ -1,4 +1,3 @@
-
 import os
 import json
 import argparse
@@ -6,12 +5,20 @@ import subprocess
 import shutil
 from datetime import datetime
 from src.data_fetcher import CryptoDataFetcher
+from src.audio_processor import AudioProcessor
 
 def main():
     parser = argparse.ArgumentParser(description="Crypto Ranking Video Generator")
     parser.add_argument("--dry-run", action="store_true", help="Fetch data only, skip video generation")
     parser.add_argument("--input", type=str, help="Path to input JSON file (skips fetching)")
     parser.add_argument("--fetch", action="store_true", help="Force fetch new data even if input provided (overrides input)")
+    
+    # Audio Arguments
+    parser.add_argument("--music-path", type=str, default="assets/audio/music/294_BPM88.mp3", help="Path to background music")
+    parser.add_argument("--music-volume", type=float, default=0.15, help="Music volume (0.0 to 1.0)")
+    parser.add_argument("--music-start", type=float, default=0.0, help="Music start offset in seconds")
+    parser.add_argument("--no-music", action="store_true", help="Disable background music")
+    
     args = parser.parse_args()
 
     # 1. Prepare Data
@@ -94,11 +101,6 @@ def main():
     print("--- 3. Finalizing Output ---")
     
     # Path where Manim dumps the video
-    # Usually: media_dir/videos/scene_file/quality/SceneName.mp4
-    # Here: ./out_temp/videos/video_generator/1080p60/CryptoRankingShorts.mp4
-    # Or strict resolution folder? Manim Community changes this sometimes.
-    # We search for it.
-    
     expected_name = "CryptoRankingShorts.mp4"
     found_file = None
     
@@ -113,10 +115,43 @@ def main():
         final_dest_dir = "./out"
         if not os.path.exists(final_dest_dir):
             os.makedirs(final_dest_dir)
+            
         final_dest_path = os.path.join(final_dest_dir, output_filename)
         
+        # Move initial silent video to destination (or temp location if adding music)
         shutil.move(found_file, final_dest_path)
-        print(f"SUCCESS: Video generated at {final_dest_path}")
+        print(f"Video generated at {final_dest_path}")
+        
+        # 4. Add Background Music (Optional)
+        if not args.no_music:
+            print("--- 4. Adding Background Music ---")
+            music_dest_path = os.path.join(final_dest_dir, f"crypto_summary_{as_of}_with_music.mp4")
+            
+            # Using same base name but with music, or replacing?
+            # User request: "Output: ./out/final/<same_base_name>_with_music.mp4 (or update the pipeline so the final output is this path)"
+            # And: "If the music addition step succeeds, DELETE the original (silent) video file"
+            
+            # Use `_with_music` suffix for clarity, then maybe rename?
+            # Let's stick to user request: suffix `_with_music.mp4`
+            
+            success = AudioProcessor.add_bgm_to_video(
+                input_video_path=final_dest_path,
+                music_path=args.music_path,
+                output_video_path=music_dest_path,
+                volume=args.music_volume,
+                start_time=args.music_start
+            )
+            
+            if success:
+                print(f"Music added successfully. Removing silent version.")
+                os.remove(final_dest_path)
+                print(f"FINAL OUTPUT: {music_dest_path}")
+            else:
+                print("Warning: Failed to add music. Keeping silent version.")
+                print(f"FINAL OUTPUT: {final_dest_path}")
+        else:
+             print(f"FINAL OUTPUT: {final_dest_path}")
+
     else:
         print("Error: Could not find generated video file.")
         

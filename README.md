@@ -60,8 +60,29 @@ Automatically generates a 60-second YouTube Short (9:16) visualizing:
 
     **Output**: Saved to `./out/crypto_summary_YYYY-MM-DD.mp4`.
     
-    **Other Options**:
     *   `--dry-run`: Fetch data only, skip video generation.
+    *   `--no-music`: Disable background music.
+    *   `--music-volume`: Set music volume (default 0.15).
+
+## Audio / Background Music
+
+The generator automatically adds background music to the final video using FFmpeg.
+
+*   **Default File**: `assets/audio/music/idokay - Fall Down.mp3`
+*   **Behavior**:
+    *   Music is looped or truncated to match video duration.
+    *   Fades in (0.5s) and out (0.8s).
+    *   Silent video is deleted upon success; preserved on failure.
+
+**Changing Music**:
+Use the `--music-path` argument:
+```bash
+python main.py --music-path "assets/audio/music/my_song.mp3" --music-volume 0.2
+```
+
+**Troubleshooting Audio**:
+*   Ensure `ffmpeg` and `ffprobe` are installed/in your PATH.
+*   If mixing fails, the silent video remains in `./out`.
     
 ## Video Layout & Safe Area (YouTube Shorts)
 

@@ -1,252 +1,7 @@
 {
-  "asOf": "2026-01-02T07:20:34.450602Z",
+  "asOf": "2026-01-03T10:39:08.955907Z",
   "currency": "usd",
   "top10_7d": [
-    {
-      "date": "2025-12-27",
-      "items": [
-        {
-          "id": "bitcoin",
-          "symbol": "BTC",
-          "name": "Bitcoin",
-          "market_cap": 1743187621561.159,
-          "price": 87305.95655961394,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin.png"
-        },
-        {
-          "id": "ethereum",
-          "symbol": "ETH",
-          "name": "Ethereum",
-          "market_cap": 353065144652.60986,
-          "price": 2926.695639112761,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethereum.png"
-        },
-        {
-          "id": "tether",
-          "symbol": "USDT",
-          "name": "Tether",
-          "market_cap": 186755060290.9574,
-          "price": 0.9993672322965341,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tether.png"
-        },
-        {
-          "id": "binancecoin",
-          "symbol": "BNB",
-          "name": "BNB",
-          "market_cap": 114905145748.4669,
-          "price": 834.3408283262127,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binancecoin.png"
-        },
-        {
-          "id": "ripple",
-          "symbol": "XRP",
-          "name": "XRP",
-          "market_cap": 111590253884.79008,
-          "price": 1.8429652913700634,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ripple.png"
-        },
-        {
-          "id": "usd-coin",
-          "symbol": "USDC",
-          "name": "USDC",
-          "market_cap": 76517544120.7733,
-          "price": 0.9998892293013324,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usd-coin.png"
-        },
-        {
-          "id": "solana",
-          "symbol": "SOL",
-          "name": "Solana",
-          "market_cap": 68749899193.13757,
-          "price": 122.18760348085107,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/solana.png"
-        },
-        {
-          "id": "tron",
-          "symbol": "TRX",
-          "name": "TRON",
-          "market_cap": 26471777099.47492,
-          "price": 0.27953925127721946,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tron.png"
-        },
-        {
-          "id": "staked-ether",
-          "symbol": "STETH",
-          "name": "Lido Staked Ether",
-          "market_cap": 25686689465.154934,
-          "price": 2925.7467137220024,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/staked-ether.png"
-        },
-        {
-          "id": "dogecoin",
-          "symbol": "DOGE",
-          "name": "Dogecoin",
-          "market_cap": 18578288456.70482,
-          "price": 0.12199701828520598,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/dogecoin.png"
-        },
-        {
-          "id": "figure-heloc",
-          "symbol": "FIGR_HELOC",
-          "name": "Figure Heloc",
-          "market_cap": 14734694024.897457,
-          "price": 1.025905,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/figure-heloc.png"
-        },
-        {
-          "id": "cardano",
-          "symbol": "ADA",
-          "name": "Cardano",
-          "market_cap": 12816538755.298286,
-          "price": 0.34958175338513353,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/cardano.png"
-        },
-        {
-          "id": "whitebit",
-          "symbol": "WBT",
-          "name": "WhiteBIT Coin",
-          "market_cap": 12001895040.837078,
-          "price": 56.05347400822269,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/whitebit.png"
-        },
-        {
-          "id": "bitcoin-cash",
-          "symbol": "BCH",
-          "name": "Bitcoin Cash",
-          "market_cap": 11850362336.268053,
-          "price": 593.5512854619367,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin-cash.png"
-        },
-        {
-          "id": "wrapped-steth",
-          "symbol": "WSTETH",
-          "name": "Wrapped stETH",
-          "market_cap": 11377823241.922543,
-          "price": 3579.873363501574,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-steth.png"
-        },
-        {
-          "id": "wrapped-bitcoin",
-          "symbol": "WBTC",
-          "name": "Wrapped Bitcoin",
-          "market_cap": 10915159582.168873,
-          "price": 87359.64227330609,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-bitcoin.png"
-        },
-        {
-          "id": "wrapped-beacon-eth",
-          "symbol": "WBETH",
-          "name": "Wrapped Beacon ETH",
-          "market_cap": 10380245575.82368,
-          "price": 3180.8229908667327,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-beacon-eth.png"
-        },
-        {
-          "id": "usds",
-          "symbol": "USDS",
-          "name": "USDS",
-          "market_cap": 9527430518.942455,
-          "price": 0.9998016545329736,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usds.png"
-        },
-        {
-          "id": "wrapped-eeth",
-          "symbol": "WEETH",
-          "name": "Wrapped eETH",
-          "market_cap": 8984532902.552887,
-          "price": 3174.171270029581,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-eeth.png"
-        },
-        {
-          "id": "binance-bridged-usdt-bnb-smart-chain",
-          "symbol": "BSC-USD",
-          "name": "Binance Bridged USDT (BNB Smart Chain)",
-          "market_cap": 8977196529.530943,
-          "price": 0.9991788391349902,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binance-bridged-usdt-bnb-smart-chain.png"
-        },
-        {
-          "id": "chainlink",
-          "symbol": "LINK",
-          "name": "Chainlink",
-          "market_cap": 8616872677.552448,
-          "price": 12.17612640631502,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/chainlink.png"
-        },
-        {
-          "id": "monero",
-          "symbol": "XMR",
-          "name": "Monero",
-          "market_cap": 8217749102.769047,
-          "price": 445.00711937491263,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/monero.png"
-        },
-        {
-          "id": "leo-token",
-          "symbol": "LEO",
-          "name": "LEO Token",
-          "market_cap": 7826258642.669916,
-          "price": 8.493784478908848,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/leo-token.png"
-        },
-        {
-          "id": "weth",
-          "symbol": "WETH",
-          "name": "WETH",
-          "market_cap": 7531386573.841446,
-          "price": 2927.2011726497635,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/weth.png"
-        },
-        {
-          "id": "zcash",
-          "symbol": "ZEC",
-          "name": "Zcash",
-          "market_cap": 7367236270.8066025,
-          "price": 447.73602922293463,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png"
-        },
-        {
-          "id": "stellar",
-          "symbol": "XLM",
-          "name": "Stellar",
-          "market_cap": 6910051013.611362,
-          "price": 0.21344608860618633,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/stellar.png"
-        },
-        {
-          "id": "coinbase-wrapped-btc",
-          "symbol": "CBBTC",
-          "name": "Coinbase Wrapped BTC",
-          "market_cap": 6341629886.321075,
-          "price": 87327.12876510878,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png"
-        },
-        {
-          "id": "ethena-usde",
-          "symbol": "USDE",
-          "name": "Ethena USDe",
-          "market_cap": 6308410608.786358,
-          "price": 0.9985345828219275,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethena-usde.png"
-        },
-        {
-          "id": "litecoin",
-          "symbol": "LTC",
-          "name": "Litecoin",
-          "market_cap": 5886678583.590361,
-          "price": 76.79548473768956,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
-        },
-        {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 3655594903.8853145,
-          "price": 0.09979920845773944,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
-        }
-      ]
-    },
     {
       "date": "2025-12-28",
       "items": [
@@ -483,12 +238,12 @@
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 4198607180.926114,
-          "price": 0.11387484894616356,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5413861253.309711,
+          "price": 1.4504390358749448,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     },
@@ -728,12 +483,12 @@
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 5230343703.2866125,
-          "price": 0.14164401232456458,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5399946876.698222,
+          "price": 1.4447277988980103,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     },
@@ -973,12 +728,12 @@
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 4713131210.501219,
-          "price": 0.12752474980172068,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5372483928.496787,
+          "price": 1.4377939456006132,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     },
@@ -1218,12 +973,12 @@
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 5414460145.993535,
-          "price": 0.14741258827280257,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5359983552.31513,
+          "price": 1.4343680290372662,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     },
@@ -1463,12 +1218,12 @@
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 5607967745.156095,
-          "price": 0.1522885572773034,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5243632007.722881,
+          "price": 1.4025705255563714,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     },
@@ -1479,80 +1234,80 @@
           "id": "bitcoin",
           "symbol": "BTC",
           "name": "Bitcoin",
-          "market_cap": 1775153939681.778,
-          "price": 88914.02475690341,
+          "market_cap": 1771365149347.3962,
+          "price": 88727.67004249741,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin.png"
         },
         {
           "id": "ethereum",
           "symbol": "ETH",
           "name": "Ethereum",
-          "market_cap": 365315379721.3615,
-          "price": 3027.1808987467994,
+          "market_cap": 362099985541.6034,
+          "price": 3000.4191168879165,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethereum.png"
         },
         {
           "id": "tether",
           "symbol": "USDT",
           "name": "Tether",
-          "market_cap": 186888919854.86884,
-          "price": 0.9988754491896225,
+          "market_cap": 186881197640.76086,
+          "price": 0.9988679818488146,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tether.png"
         },
         {
           "id": "binancecoin",
           "symbol": "BNB",
           "name": "BNB",
-          "market_cap": 119227617190.88232,
-          "price": 865.5256253412736,
+          "market_cap": 118849214809.2441,
+          "price": 862.9202786806326,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binancecoin.png"
         },
         {
           "id": "ripple",
           "symbol": "XRP",
           "name": "XRP",
-          "market_cap": 113766525319.25893,
-          "price": 1.8754246621470136,
+          "market_cap": 113862299868.79008,
+          "price": 1.876580133618003,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ripple.png"
         },
         {
           "id": "usd-coin",
           "symbol": "USDC",
           "name": "USDC",
-          "market_cap": 75189507128.51472,
-          "price": 0.9998407019818695,
+          "market_cap": 75187332687.29697,
+          "price": 0.9998929070732341,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usd-coin.png"
         },
         {
           "id": "solana",
           "symbol": "SOL",
           "name": "Solana",
-          "market_cap": 71688754306.54091,
-          "price": 127.32379622730531,
+          "market_cap": 71412464990.55157,
+          "price": 126.73481257128296,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/solana.png"
         },
         {
           "id": "tron",
           "symbol": "TRX",
           "name": "TRON",
-          "market_cap": 27046561633.59175,
-          "price": 0.2858358963010545,
+          "market_cap": 27117321731.27179,
+          "price": 0.2864516260592263,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tron.png"
         },
         {
           "id": "staked-ether",
           "symbol": "STETH",
           "name": "Lido Staked Ether",
-          "market_cap": 26690420338.174465,
-          "price": 3025.391949024404,
+          "market_cap": 26455764290.950943,
+          "price": 2999.0845896823885,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/staked-ether.png"
         },
         {
           "id": "dogecoin",
           "symbol": "DOGE",
           "name": "Dogecoin",
-          "market_cap": 21606586429.23256,
-          "price": 0.12849332503440686,
+          "market_cap": 21279039392.246357,
+          "price": 0.1266112971022498,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/dogecoin.png"
         },
         {
@@ -1567,153 +1322,398 @@
           "id": "cardano",
           "symbol": "ADA",
           "name": "Cardano",
-          "market_cap": 13116622235.611052,
-          "price": 0.35781608081417904,
+          "market_cap": 13066529553.387571,
+          "price": 0.3561620385901469,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/cardano.png"
         },
         {
           "id": "whitebit",
           "symbol": "WBT",
           "name": "WhiteBIT Coin",
-          "market_cap": 12212941642.404158,
-          "price": 57.08038392535853,
+          "market_cap": 12199238893.054205,
+          "price": 56.9814300930538,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/whitebit.png"
         },
         {
           "id": "bitcoin-cash",
           "symbol": "BCH",
           "name": "Bitcoin Cash",
-          "market_cap": 11855756360.00916,
-          "price": 593.9234723450868,
+          "market_cap": 11823746404.98592,
+          "price": 591.8506596522775,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin-cash.png"
         },
         {
           "id": "wrapped-steth",
           "symbol": "WSTETH",
           "name": "Wrapped stETH",
-          "market_cap": 11836109149.893665,
-          "price": 3704.81828622137,
+          "market_cap": 11729002763.978003,
+          "price": 3671.780498938044,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-steth.png"
         },
         {
           "id": "wrapped-bitcoin",
           "symbol": "WBTC",
           "name": "Wrapped Bitcoin",
-          "market_cap": 11076754845.243263,
-          "price": 88659.0446931625,
+          "market_cap": 11048276081.539623,
+          "price": 88407.48164961352,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-bitcoin.png"
         },
         {
           "id": "wrapped-beacon-eth",
           "symbol": "WBETH",
           "name": "Wrapped Beacon ETH",
-          "market_cap": 10740186575.162086,
-          "price": 3289.802497610034,
+          "market_cap": 10651300233.899937,
+          "price": 3262.347579444699,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-beacon-eth.png"
         },
         {
           "id": "wrapped-eeth",
           "symbol": "WEETH",
           "name": "Wrapped eETH",
-          "market_cap": 9340443980.446482,
-          "price": 3284.1967170348694,
+          "market_cap": 9260818753.170553,
+          "price": 3255.6489550488836,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-eeth.png"
         },
         {
           "id": "usds",
           "symbol": "USDS",
           "name": "USDS",
-          "market_cap": 9200487258.888203,
-          "price": 0.9996204914111324,
+          "market_cap": 9212898593.839622,
+          "price": 0.9996659812125523,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usds.png"
-        },
-        {
-          "id": "chainlink",
-          "symbol": "LINK",
-          "name": "Chainlink",
-          "market_cap": 9153533528.869081,
-          "price": 12.936929245143022,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/chainlink.png"
         },
         {
           "id": "binance-bridged-usdt-bnb-smart-chain",
           "symbol": "BSC-USD",
           "name": "Binance Bridged USDT (BNB Smart Chain)",
-          "market_cap": 8973401864.282116,
-          "price": 0.9986087730540586,
+          "market_cap": 8973748200.214413,
+          "price": 0.9987013957517851,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binance-bridged-usdt-bnb-smart-chain.png"
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 8910553617.634462,
+          "price": 12.584384021385063,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/chainlink.png"
         },
         {
           "id": "leo-token",
           "symbol": "LEO",
           "name": "LEO Token",
-          "market_cap": 8868291266.687426,
-          "price": 9.629544774712853,
+          "market_cap": 8820807061.484106,
+          "price": 9.568847996008765,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/leo-token.png"
         },
         {
           "id": "zcash",
           "symbol": "ZEC",
           "name": "Zcash",
-          "market_cap": 8614252177.659382,
-          "price": 522.7401830321209,
+          "market_cap": 8629652227.0319,
+          "price": 523.9259139045529,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png"
         },
         {
           "id": "weth",
           "symbol": "WETH",
           "name": "WETH",
-          "market_cap": 7992343154.342772,
-          "price": 3028.199543618988,
+          "market_cap": 7929243821.471652,
+          "price": 3001.2854916972656,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/weth.png"
         },
         {
           "id": "monero",
           "symbol": "XMR",
           "name": "Monero",
-          "market_cap": 7670719724.40992,
-          "price": 415.9894492777196,
+          "market_cap": 7725094036.065028,
+          "price": 419.5105756573671,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/monero.png"
-        },
-        {
-          "id": "coinbase-wrapped-btc",
-          "symbol": "CBBTC",
-          "name": "Coinbase Wrapped BTC",
-          "market_cap": 6707167735.035524,
-          "price": 88901.9956912819,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png"
         },
         {
           "id": "stellar",
           "symbol": "XLM",
           "name": "Stellar",
-          "market_cap": 6705180129.825181,
-          "price": 0.207087328775362,
+          "market_cap": 6753824293.175799,
+          "price": 0.2084546600967101,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/stellar.png"
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6708281021.435135,
+          "price": 88753.61024366059,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png"
         },
         {
           "id": "ethena-usde",
           "symbol": "USDE",
           "name": "Ethena USDe",
-          "market_cap": 6295035100.554872,
-          "price": 0.9986474243233195,
+          "market_cap": 6293335407.566847,
+          "price": 0.9985767667967919,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethena-usde.png"
         },
         {
           "id": "litecoin",
           "symbol": "LTC",
           "name": "Litecoin",
-          "market_cap": 6091646618.249442,
-          "price": 79.40798778079078,
+          "market_cap": 6123514504.141073,
+          "price": 79.79850158808563,
           "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
         },
         {
-          "id": "canton-network",
-          "symbol": "CC",
-          "name": "Canton",
-          "market_cap": 5912402810.848256,
-          "price": 0.1583339873549816,
-          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 5577777864.958872,
+          "price": 1.4703665653116436,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
+        }
+      ]
+    },
+    {
+      "date": "2026-01-03",
+      "items": [
+        {
+          "id": "bitcoin",
+          "symbol": "BTC",
+          "name": "Bitcoin",
+          "market_cap": 1791536791653.9197,
+          "price": 89732.73954407613,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin.png"
+        },
+        {
+          "id": "ethereum",
+          "symbol": "ETH",
+          "name": "Ethereum",
+          "market_cap": 374092013177.15546,
+          "price": 3099.5016017104117,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethereum.png"
+        },
+        {
+          "id": "tether",
+          "symbol": "USDT",
+          "name": "Tether",
+          "market_cap": 187035327884.3244,
+          "price": 0.9996098056006184,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tether.png"
+        },
+        {
+          "id": "ripple",
+          "symbol": "XRP",
+          "name": "XRP",
+          "market_cap": 121865827361.2109,
+          "price": 2.007996693488651,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ripple.png"
+        },
+        {
+          "id": "binancecoin",
+          "symbol": "BNB",
+          "name": "BNB",
+          "market_cap": 120259226440.00208,
+          "price": 873.3889991527392,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binancecoin.png"
+        },
+        {
+          "id": "usd-coin",
+          "symbol": "USDC",
+          "name": "USDC",
+          "market_cap": 75329065549.00833,
+          "price": 0.9998617341934528,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usd-coin.png"
+        },
+        {
+          "id": "solana",
+          "symbol": "SOL",
+          "name": "Solana",
+          "market_cap": 73761670333.5266,
+          "price": 130.94145861811793,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/solana.png"
+        },
+        {
+          "id": "staked-ether",
+          "symbol": "STETH",
+          "name": "Lido Staked Ether",
+          "market_cap": 27390477830.239872,
+          "price": 3097.018851476878,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/staked-ether.png"
+        },
+        {
+          "id": "tron",
+          "symbol": "TRX",
+          "name": "TRON",
+          "market_cap": 27286206227.958725,
+          "price": 0.2881088151637408,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tron.png"
+        },
+        {
+          "id": "dogecoin",
+          "symbol": "DOGE",
+          "name": "Dogecoin",
+          "market_cap": 24007647668.76666,
+          "price": 0.14286521668933355,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/dogecoin.png"
+        },
+        {
+          "id": "figure-heloc",
+          "symbol": "FIGR_HELOC",
+          "name": "Figure Heloc",
+          "market_cap": 14858269135.012667,
+          "price": 1.0326658,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/figure-heloc.png"
+        },
+        {
+          "id": "cardano",
+          "symbol": "ADA",
+          "name": "Cardano",
+          "market_cap": 14120554881.001284,
+          "price": 0.38523697476885144,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/cardano.png"
+        },
+        {
+          "id": "bitcoin-cash",
+          "symbol": "BCH",
+          "name": "Bitcoin Cash",
+          "market_cap": 12597561607.854391,
+          "price": 631.3246339066767,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin-cash.png"
+        },
+        {
+          "id": "whitebit",
+          "symbol": "WBT",
+          "name": "WhiteBIT Coin",
+          "market_cap": 12208518549.853865,
+          "price": 57.03561255693597,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/whitebit.png"
+        },
+        {
+          "id": "wrapped-steth",
+          "symbol": "WSTETH",
+          "name": "Wrapped stETH",
+          "market_cap": 12187270188.944233,
+          "price": 3792.7825918997178,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-steth.png"
+        },
+        {
+          "id": "wrapped-bitcoin",
+          "symbol": "WBTC",
+          "name": "Wrapped Bitcoin",
+          "market_cap": 11184072236.267666,
+          "price": 89498.99749317222,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-bitcoin.png"
+        },
+        {
+          "id": "wrapped-beacon-eth",
+          "symbol": "WBETH",
+          "name": "Wrapped Beacon ETH",
+          "market_cap": 10992187839.785723,
+          "price": 3367.779446780792,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-beacon-eth.png"
+        },
+        {
+          "id": "usds",
+          "symbol": "USDS",
+          "name": "USDS",
+          "market_cap": 9617120005.828928,
+          "price": 0.9997810438213203,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usds.png"
+        },
+        {
+          "id": "wrapped-eeth",
+          "symbol": "WEETH",
+          "name": "Wrapped eETH",
+          "market_cap": 9576702571.515387,
+          "price": 3366.0033110235618,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-eeth.png"
+        },
+        {
+          "id": "chainlink",
+          "symbol": "LINK",
+          "name": "Chainlink",
+          "market_cap": 9271017314.53759,
+          "price": 13.101391557572553,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/chainlink.png"
+        },
+        {
+          "id": "binance-bridged-usdt-bnb-smart-chain",
+          "symbol": "BSC-USD",
+          "name": "Binance Bridged USDT (BNB Smart Chain)",
+          "market_cap": 8981539555.509657,
+          "price": 0.9996170801369293,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binance-bridged-usdt-bnb-smart-chain.png"
+        },
+        {
+          "id": "leo-token",
+          "symbol": "LEO",
+          "name": "LEO Token",
+          "market_cap": 8497161709.168218,
+          "price": 9.21895642479684,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/leo-token.png"
+        },
+        {
+          "id": "zcash",
+          "symbol": "ZEC",
+          "name": "Zcash",
+          "market_cap": 8344734650.986192,
+          "price": 506.5387378017701,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png"
+        },
+        {
+          "id": "weth",
+          "symbol": "WETH",
+          "name": "WETH",
+          "market_cap": 8111295737.55005,
+          "price": 3100.714700673149,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/weth.png"
+        },
+        {
+          "id": "monero",
+          "symbol": "XMR",
+          "name": "Monero",
+          "market_cap": 7814112868.262554,
+          "price": 424.0539141375125,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/monero.png"
+        },
+        {
+          "id": "stellar",
+          "symbol": "XLM",
+          "name": "Stellar",
+          "market_cap": 7075293272.189543,
+          "price": 0.21848246834511703,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/stellar.png"
+        },
+        {
+          "id": "coinbase-wrapped-btc",
+          "symbol": "CBBTC",
+          "name": "Coinbase Wrapped BTC",
+          "market_cap": 6837291929.00732,
+          "price": 89773.70584936834,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png"
+        },
+        {
+          "id": "ethena-usde",
+          "symbol": "USDE",
+          "name": "Ethena USDe",
+          "market_cap": 6298276008.899886,
+          "price": 0.9995368268371497,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethena-usde.png"
+        },
+        {
+          "id": "litecoin",
+          "symbol": "LTC",
+          "name": "Litecoin",
+          "market_cap": 6230242015.030886,
+          "price": 81.33514679295344,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png"
+        },
+        {
+          "id": "sui",
+          "symbol": "SUI",
+          "name": "Sui",
+          "market_cap": 6225930679.910245,
+          "price": 1.6447801881064574,
+          "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
         }
       ]
     }
@@ -1721,27 +1721,27 @@
   "weekly_top_movers": {
     "gainers": [
       {
-        "id": "canton-network",
-        "name": "Canton",
-        "symbol": "CC",
-        "price": 0.1583339873549816,
-        "change_7d_pct": 58.65254825345539,
-        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png"
+        "id": "dogecoin",
+        "name": "Dogecoin",
+        "symbol": "DOGE",
+        "price": 0.14286521668933355,
+        "change_7d_pct": 14.960110224716036,
+        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/dogecoin.png"
       },
       {
-        "id": "zcash",
-        "name": "Zcash",
-        "symbol": "ZEC",
-        "price": 522.7401830321209,
-        "change_7d_pct": 16.751869162586537,
-        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png"
+        "id": "sui",
+        "name": "Sui",
+        "symbol": "SUI",
+        "price": 1.6447801881064574,
+        "change_7d_pct": 13.398781156926093,
+        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png"
       },
       {
         "id": "leo-token",
         "name": "LEO Token",
         "symbol": "LEO",
-        "price": 9.629544774712853,
-        "change_7d_pct": 13.371663698605051,
+        "price": 9.21895642479684,
+        "change_7d_pct": 8.717404665410312,
         "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/leo-token.png"
       }
     ],
@@ -1750,25 +1750,25 @@
         "id": "monero",
         "name": "Monero",
         "symbol": "XMR",
-        "price": 415.9894492777196,
-        "change_7d_pct": -6.520720418575156,
+        "price": 424.0539141375125,
+        "change_7d_pct": -6.473020549488724,
         "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/monero.png"
+      },
+      {
+        "id": "zcash",
+        "name": "Zcash",
+        "symbol": "ZEC",
+        "price": 506.5387378017701,
+        "change_7d_pct": -1.652513258963294,
+        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png"
       },
       {
         "id": "stellar",
         "name": "Stellar",
         "symbol": "XLM",
-        "price": 0.207087328775362,
-        "change_7d_pct": -2.979094099286306,
+        "price": 0.21848246834511703,
+        "change_7d_pct": -0.8983687544924618,
         "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/stellar.png"
-      },
-      {
-        "id": "figure-heloc",
-        "name": "Figure Heloc",
-        "symbol": "FIGR_HELOC",
-        "price": 1.0192229,
-        "change_7d_pct": -0.6513371121107836,
-        "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/figure-heloc.png"
       }
     ]
   },
@@ -1776,312 +1776,306 @@
     {
       "id": "bitcoin",
       "symbol": "BTC",
-      "change_24h_pct": 1.60455,
+      "change_24h_pct": 0.21221,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin.png",
       "stats_7d": {
-        "mean": 0.3096123905962063,
-        "std": 1.093030596158034
+        "mean": 0.36726781321749363,
+        "std": 1.1009385217139949
       }
     },
     {
       "id": "ethereum",
       "symbol": "ETH",
-      "change_24h_pct": 1.79407,
+      "change_24h_pct": 1.52378,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethereum.png",
       "stats_7d": {
-        "mean": 0.5679372106904819,
-        "std": 0.9490605894921363
+        "mean": 0.8417453347899486,
+        "std": 1.3899284469286832
       }
     },
     {
       "id": "tether",
       "symbol": "USDT",
-      "change_24h_pct": 0.0324,
+      "change_24h_pct": 0.07146,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tether.png",
       "stats_7d": {
-        "mean": -0.008200067515833022,
-        "std": 0.02766491575431505
-      }
-    },
-    {
-      "id": "binancecoin",
-      "symbol": "BNB",
-      "change_24h_pct": 0.6487,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binancecoin.png",
-      "stats_7d": {
-        "mean": 0.6169173664710317,
-        "std": 0.9126451548247423
+        "mean": 0.002343686766620542,
+        "std": 0.04376356283120857
       }
     },
     {
       "id": "ripple",
       "symbol": "XRP",
-      "change_24h_pct": 1.73114,
+      "change_24h_pct": 5.81821,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ripple.png",
       "stats_7d": {
-        "mean": 0.3021912063840513,
-        "std": 1.609002945719047
+        "mean": 1.2046532597446535,
+        "std": 3.204731250905727
+      }
+    },
+    {
+      "id": "binancecoin",
+      "symbol": "BNB",
+      "change_24h_pct": 0.15562,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binancecoin.png",
+      "stats_7d": {
+        "mean": 0.5623116702717826,
+        "std": 0.9394881703769985
       }
     },
     {
       "id": "usd-coin",
       "symbol": "USDC",
-      "change_24h_pct": 0.01152,
+      "change_24h_pct": 0.01797,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usd-coin.png",
       "stats_7d": {
-        "mean": -0.0008068841970495978,
-        "std": 0.02196659531515486
+        "mean": -0.006333132702990451,
+        "std": 0.01416848465069203
       }
     },
     {
       "id": "solana",
       "symbol": "SOL",
-      "change_24h_pct": 2.0963,
+      "change_24h_pct": 1.55783,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/solana.png",
       "stats_7d": {
-        "mean": 0.6980049250482337,
-        "std": 1.5021638306607943
-      }
-    },
-    {
-      "id": "tron",
-      "symbol": "TRX",
-      "change_24h_pct": 0.42859,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tron.png",
-      "stats_7d": {
-        "mean": 0.3747040653293277,
-        "std": 0.8169681602337179
+        "mean": 0.8380732846290718,
+        "std": 1.73645815232947
       }
     },
     {
       "id": "staked-ether",
       "symbol": "STETH",
-      "change_24h_pct": 1.78263,
+      "change_24h_pct": 1.51581,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/staked-ether.png",
       "stats_7d": {
-        "mean": 0.5633682635806972,
-        "std": 0.9367071661580483
+        "mean": 0.832868929067807,
+        "std": 1.371759687240745
+      }
+    },
+    {
+      "id": "tron",
+      "symbol": "TRX",
+      "change_24h_pct": 1.18928,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/tron.png",
+      "stats_7d": {
+        "mean": 0.21054275591289717,
+        "std": 0.5201098313183382
       }
     },
     {
       "id": "dogecoin",
       "symbol": "DOGE",
-      "change_24h_pct": 8.53079,
+      "change_24h_pct": 7.88171,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/dogecoin.png",
       "stats_7d": {
-        "mean": 0.9603020597831148,
-        "std": 4.7728502905388765
+        "mean": 2.5214374715137815,
+        "std": 6.550129193921739
       }
     },
     {
       "id": "figure-heloc",
       "symbol": "FIGR_HELOC",
-      "change_24h_pct": -0.87781,
+      "change_24h_pct": -0.79002,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/figure-heloc.png",
       "stats_7d": {
-        "mean": -0.10407602690303254,
-        "std": 1.0702451698239648
+        "mean": 0.2063171160166037,
+        "std": 1.181608954995554
       }
     },
     {
       "id": "cardano",
       "symbol": "ADA",
-      "change_24h_pct": 6.17791,
+      "change_24h_pct": 5.7516,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/cardano.png",
       "stats_7d": {
-        "mean": 0.49733541437283035,
-        "std": 5.139160226961009
-      }
-    },
-    {
-      "id": "whitebit",
-      "symbol": "WBT",
-      "change_24h_pct": 1.24085,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/whitebit.png",
-      "stats_7d": {
-        "mean": 0.3066199756702014,
-        "std": 0.9280576974184301
+        "mean": 0.8396139773962595,
+        "std": 5.606781326533765
       }
     },
     {
       "id": "bitcoin-cash",
       "symbol": "BCH",
-      "change_24h_pct": -0.17063,
+      "change_24h_pct": 5.31619,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/bitcoin-cash.png",
       "stats_7d": {
-        "mean": 0.04346194741852957,
-        "std": 2.829603321294695
+        "mean": 0.27085355084565466,
+        "std": 3.470478111480146
+      }
+    },
+    {
+      "id": "whitebit",
+      "symbol": "WBT",
+      "change_24h_pct": -0.87977,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/whitebit.png",
+      "stats_7d": {
+        "mean": 0.2418775277984892,
+        "std": 0.8953048745579358
       }
     },
     {
       "id": "wrapped-steth",
       "symbol": "WSTETH",
-      "change_24h_pct": 1.78229,
+      "change_24h_pct": 1.40944,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-steth.png",
       "stats_7d": {
-        "mean": 0.5770838318158916,
-        "std": 0.9421603369208703
+        "mean": 0.8555638103059692,
+        "std": 1.3729341775624981
       }
     },
     {
       "id": "wrapped-bitcoin",
       "symbol": "WBTC",
-      "change_24h_pct": 1.59271,
+      "change_24h_pct": 0.10993,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-bitcoin.png",
       "stats_7d": {
-        "mean": 0.25365912356615594,
-        "std": 1.3236427579175605
+        "mean": 0.36838553566569116,
+        "std": 1.3285948402564902
       }
     },
     {
       "id": "wrapped-beacon-eth",
       "symbol": "WBETH",
-      "change_24h_pct": 1.76522,
+      "change_24h_pct": 1.52283,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-beacon-eth.png",
       "stats_7d": {
-        "mean": 0.5668349869178215,
-        "std": 0.9584294172334366
-      }
-    },
-    {
-      "id": "wrapped-eeth",
-      "symbol": "WEETH",
-      "change_24h_pct": 1.82105,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-eeth.png",
-      "stats_7d": {
-        "mean": 0.5729537109803421,
-        "std": 0.9088591152092833
+        "mean": 0.8315064844267913,
+        "std": 1.3729049672854565
       }
     },
     {
       "id": "usds",
       "symbol": "USDS",
-      "change_24h_pct": 0.01017,
+      "change_24h_pct": 0.02782,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/usds.png",
       "stats_7d": {
-        "mean": -0.003019913481006415,
-        "std": 0.008469808667997287
+        "mean": 0.0014203473754111286,
+        "std": 0.009865217157696192
+      }
+    },
+    {
+      "id": "wrapped-eeth",
+      "symbol": "WEETH",
+      "change_24h_pct": 1.46814,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/wrapped-eeth.png",
+      "stats_7d": {
+        "mean": 0.8666671515687768,
+        "std": 1.396123128575763
       }
     },
     {
       "id": "chainlink",
       "symbol": "LINK",
-      "change_24h_pct": 5.93348,
+      "change_24h_pct": 0.51597,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/chainlink.png",
       "stats_7d": {
-        "mean": 1.0501709638616599,
-        "std": 2.9293550526449343
+        "mean": 0.8406875061205908,
+        "std": 2.4142679691124136
       }
     },
     {
       "id": "binance-bridged-usdt-bnb-smart-chain",
       "symbol": "BSC-USD",
-      "change_24h_pct": 0.03845,
+      "change_24h_pct": 0.10863,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/binance-bridged-usdt-bnb-smart-chain.png",
       "stats_7d": {
-        "mean": -0.009509425411032037,
-        "std": 0.02046700591423183
+        "mean": 0.006658434977548146,
+        "std": 0.04736177975251531
       }
     },
     {
       "id": "leo-token",
       "symbol": "LEO",
-      "change_24h_pct": -0.51672,
+      "change_24h_pct": -4.26351,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/leo-token.png",
       "stats_7d": {
-        "mean": 2.148716415831747,
-        "std": 2.9474078177112872
+        "mean": 1.4615436914071491,
+        "std": 3.788669086151089
       }
     },
     {
       "id": "zcash",
       "symbol": "ZEC",
-      "change_24h_pct": 1.85393,
+      "change_24h_pct": -0.33377,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/zcash.png",
       "stats_7d": {
-        "mean": 2.7785514349391796,
-        "std": 6.491658526749102
+        "mean": -0.24171050489264392,
+        "std": 2.92029807255538
       }
     },
     {
       "id": "weth",
       "symbol": "WETH",
-      "change_24h_pct": 1.80997,
+      "change_24h_pct": 1.35303,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/weth.png",
       "stats_7d": {
-        "mean": 0.5707139804904512,
-        "std": 0.9533635875630418
+        "mean": 0.8486241748834367,
+        "std": 1.3891536999246856
       }
     },
     {
       "id": "monero",
       "symbol": "XMR",
-      "change_24h_pct": -2.55835,
+      "change_24h_pct": 0.08324,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/monero.png",
       "stats_7d": {
-        "mean": -1.0955792834221014,
-        "std": 2.2808779108625914
-      }
-    },
-    {
-      "id": "coinbase-wrapped-btc",
-      "symbol": "CBBTC",
-      "change_24h_pct": 1.5923,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png",
-      "stats_7d": {
-        "mean": 0.30360584127720497,
-        "std": 1.126504130023816
+        "mean": -1.094152109629236,
+        "std": 1.883046534479252
       }
     },
     {
       "id": "stellar",
       "symbol": "XLM",
-      "change_24h_pct": 2.21817,
+      "change_24h_pct": 3.2383,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/stellar.png",
       "stats_7d": {
-        "mean": -0.4594877686904317,
-        "std": 3.2189245765297203
+        "mean": -0.09205351544964714,
+        "std": 3.7472220776926615
+      }
+    },
+    {
+      "id": "coinbase-wrapped-btc",
+      "symbol": "CBBTC",
+      "change_24h_pct": -0.13147,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/coinbase-wrapped-btc.png",
+      "stats_7d": {
+        "mean": 0.38973143632833135,
+        "std": 1.1460989282873453
       }
     },
     {
       "id": "ethena-usde",
       "symbol": "USDE",
-      "change_24h_pct": 0.05552,
+      "change_24h_pct": 0.12035,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/ethena-usde.png",
       "stats_7d": {
-        "mean": 0.0018870879517702231,
-        "std": 0.02990120595107864
+        "mean": 0.017154620851001893,
+        "std": 0.047532752146816494
       }
     },
     {
       "id": "litecoin",
       "symbol": "LTC",
-      "change_24h_pct": 2.94743,
+      "change_24h_pct": 1.38598,
       "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/litecoin.png",
       "stats_7d": {
-        "mean": 0.5915293704786494,
-        "std": 2.8041214638110863
+        "mean": 0.27561887657070294,
+        "std": 2.437532804545347
       }
     },
     {
-      "id": "canton-network",
-      "symbol": "CC",
-      "change_24h_pct": 3.29053,
-      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/canton-network.png",
+      "id": "sui",
+      "symbol": "SUI",
+      "change_24h_pct": 8.35077,
+      "image": "/Users/kentosaito/Documents/git/crypto-market-capital-ranking-visualization/assets/coins/sui.png",
       "stats_7d": {
-        "mean": 8.565702302107288,
-        "std": 12.021911313018244
+        "mean": 2.227801065648101,
+        "std": 5.284838245136195
       }
     }
   ],
   "dominance": {
     "series": [
-      {
-        "date": "2025-12-27",
-        "btc_pct": 60.0,
-        "eth_pct": 12.2,
-        "stable_pct": 9.3
-      },
       {
         "date": "2025-12-28",
         "btc_pct": 59.8,
@@ -2115,8 +2109,14 @@
       {
         "date": "2026-01-02",
         "btc_pct": 59.8,
-        "eth_pct": 12.3,
-        "stable_pct": 9.0
+        "eth_pct": 12.2,
+        "stable_pct": 9.1
+      },
+      {
+        "date": "2026-01-03",
+        "btc_pct": 59.4,
+        "eth_pct": 12.4,
+        "stable_pct": 8.9
       }
     ]
   }
