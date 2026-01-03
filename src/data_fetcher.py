@@ -20,6 +20,20 @@ class CryptoDataFetcher:
         # 1. Fetch current Top 30
         current_top = self._fetch_current_top_markets(limit=30)
         
+        # 1b. Download Icons
+        print("Downloading coin icons...")
+        icon_map = {} # coin_id -> local_path
+        os.makedirs("./assets/coins", exist_ok=True)
+        
+        for coin in current_top:
+            cid = coin['id']
+            img_url = coin.get('image')
+            if img_url:
+                local_path = self._download_icon(cid, img_url)
+                if local_path:
+                    icon_map[cid] = os.path.abspath(local_path)
+            time.sleep(0.5) # Gentle rate limit
+        
         # 2. Fetch Historical 7-day Market Chart
         history_map = {} # { coin_id: { 'market_caps': {date: val}, 'prices': {date: val} } }
         
@@ -74,18 +88,21 @@ class CryptoDataFetcher:
                 c_id = coin['id']
                 mcap = history_map.get(c_id, {}).get('market_caps', {}).get(d, 0)
                 price = history_map.get(c_id, {}).get('prices', {}).get(d, 0)
+                img_path = icon_map.get(c_id, "")
+                
                 if mcap > 0:
                     daily_snapshot.append({
                         "id": c_id,
                         "symbol": coin['symbol'].upper(),
                         "name": coin['name'],
                         "market_cap": mcap,
-                        "price": price
+                        "price": price,
+                        "image": img_path
                     })
             daily_snapshot.sort(key=lambda x: x['market_cap'], reverse=True)
             top10_7d.append({
                 "date": d,
-                "items": daily_snapshot # Include all (up to 30) so we can filter for Top/Bottom gainers in Renderer
+                "items": daily_snapshot 
             })
             
         # 5. Build "weekly_top_movers" AND "top30_metrics"
@@ -100,45 +117,41 @@ class CryptoDataFetcher:
         
         for coin in current_top:
             c_id = coin['id']
+            sym = coin['symbol'].upper()
+            img_path = icon_map.get(c_id, "")
+            
             prices = history_map.get(c_id, {}).get('prices', {})
+            sorted_dates = sorted(prices.keys())
             
             # --- 5a. Weekly Movers Logic ---
-            # Find closest available start/end prices
-            sorted_dates = sorted(prices.keys())
-            if not sorted_dates:
-                continue
-                
-            p_start = prices.get(start_date)
-            p_end = prices.get(end_date)
+            change_7d = 0
+            curr_price = 0
+            if sorted_dates:
+                p_start = prices[sorted_dates[0]]
+                p_end = prices[sorted_dates[-1]]
+                curr_price = p_end
+                if p_start > 0:
+                    change_7d = ((p_end - p_start) / p_start) * 100
+                    
+            movers_list.append({
+                "id": c_id,
+                "name": coin['name'],
+                "symbol": sym,
+                "price": curr_price,
+                "change_7d_pct": change_7d,
+                "image": img_path
+            })
             
-            if not p_start: p_start = prices[sorted_dates[0]]
-            if not p_end: p_end = prices[sorted_dates[-1]]
-            
-            change_7d_pct = 0
-            if p_start and p_start > 0:
-                change_7d_pct = ((p_end - p_start) / p_start) * 100
-                movers_list.append({
-                    "id": c_id,
-                    "symbol": coin['symbol'].upper(),
-                    "name": coin['name'],
-                    "price": p_end,
-                    "change_7d_pct": change_7d_pct,
-                    "market_cap": coin['market_cap']
-                    # We will append 24h change here too for convenience if needed, 
-                    # but metrics_list covers detailed stats.
-                })
-
-            # --- 5b. Metrics Calculation (For Scene 2 Badges & Scene 3) ---
-            # Calculate Daily Returns from sorted history
-            sorted_prices = [prices[d] for d in sorted_dates if prices[d] > 0]
+            # --- 5b. Metrics Calculation ---
+            sorted_prices_val = [prices[d] for d in sorted_dates if prices[d] > 0]
             daily_returns = []
-            for i in range(1, len(sorted_prices)):
-                p0 = sorted_prices[i-1]
-                p1 = sorted_prices[i]
+            for i in range(1, len(sorted_prices_val)):
+                p0 = sorted_prices_val[i-1]
+                p1 = sorted_prices_val[i]
                 if p0 > 0:
                     ret = ((p1 - p0) / p0) * 100
                     daily_returns.append(ret)
-            
+                    
             mean_7d = 0
             std_7d = 0
             if daily_returns:
@@ -146,21 +159,20 @@ class CryptoDataFetcher:
                 if len(daily_returns) > 1:
                     std_7d = statistics.stdev(daily_returns)
             
-            # Use current 24h change from the API response
             change_24h = coin.get('price_change_percentage_24h', 0)
             
             metrics_list.append({
                 "id": c_id,
-                "symbol": coin['symbol'].upper(),
+                "symbol": sym,
                 "change_24h_pct": change_24h,
+                "image": img_path,
                 "stats_7d": {
                     "mean": mean_7d,
                     "std": std_7d,
-                    "daily_returns": daily_returns[-7:] # Store last 7 for debug/detailed use
+                    # "daily_returns": daily_returns[-7:] 
                 }
             })
-            
-                
+
         sorted_movers = sorted(movers_list, key=lambda x: x['change_7d_pct'], reverse=True)
         weekly_top_movers = {
             "gainers": sorted_movers[:3],
@@ -231,8 +243,26 @@ class CryptoDataFetcher:
 
 
 
+    def _download_icon(self, coin_id, url):
+        """Downloads coin icon to ./assets/coins/{coin_id}.png if not exists."""
+        try:
+            path = f"./assets/coins/{coin_id}.png"
+            if os.path.exists(path):
+                return path
+                
+            print(f"Downloading icon for {coin_id}...")
+            r = requests.get(url, timeout=10)
+            if r.status_code == 200:
+                with open(path, 'wb') as f:
+                    f.write(r.content)
+                return path
+        except Exception as e:
+            print(f"Error downloading icon for {coin_id}: {e}")
+        return None
+
 if __name__ == "__main__":
     fetcher = CryptoDataFetcher()
     # Test run
     # data = fetcher.generate_input_json()
     # print(json.dumps(data, indent=2))
+
