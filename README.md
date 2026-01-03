@@ -64,6 +64,18 @@ Automatically generates a 60-second YouTube Short (9:16) visualizing:
     *   `--no-music`: Disable background music.
     *   `--music-volume`: Set music volume (default 0.15).
 
+3.  **Automated Daily Pipeline (One-Click)**:
+    
+    To fetch data, generate video, and **upload to YouTube** (Public) in a single step:
+    ```bash
+    python run_pipeline.py
+    ```
+    *   This script is cross-platform (Mac/Windows).
+    *   It executes: Fetch -> Generate -> Upload (Public).
+    *   **First Run**: A browser window will open to authenticate with your Google Account.
+    *   **Subsequent Runs**: Uses cached `token.json` for fully automated uploads.
+
+
 ## Audio / Background Music
 
 The generator automatically adds background music to the final video using FFmpeg.
@@ -83,7 +95,19 @@ python main.py --music-path "assets/audio/music/my_song.mp3" --music-volume 0.2
 **Troubleshooting Audio**:
 *   Ensure `ffmpeg` and `ffprobe` are installed/in your PATH.
 *   If mixing fails, the silent video remains in `./out`.
-    
+
+## YouTube Configuration
+
+To enable auto-upload, you need:
+1.  **`client_secrets.json`**: Place your OAuth 2.0 Desktop Client credentials in the project root.
+2.  **`token.json`**: Generated automatically after the first successful login.
+
+**Metadata Generation**:
+The system automatically generates:
+*   **Title**: `Crypto Ranking {Date}: {TopGainer} (+{Pct}%) 🚀 #Shorts`
+*   **Description**: Summary of Top 3 Gainers/Losers (7-day) and hashtags.
+*   **Tags**: Dynamic tickers + standard crypto tags.
+
 ## Video Layout & Safe Area (YouTube Shorts)
 
 This project targets **YouTube Shorts (9:16, 1080x1920)**.
