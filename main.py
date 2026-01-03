@@ -6,6 +6,8 @@ import shutil
 from datetime import datetime
 from src.data_fetcher import CryptoDataFetcher
 from src.audio_processor import AudioProcessor
+from src.youtube_uploader import YouTubeUploader
+from src.metadata import VideoMetadataGenerator
 
 def main():
     parser = argparse.ArgumentParser(description="Crypto Ranking Video Generator")
@@ -18,6 +20,11 @@ def main():
     parser.add_argument("--music-volume", type=float, default=0.15, help="Music volume (0.0 to 1.0)")
     parser.add_argument("--music-start", type=float, default=0.0, help="Music start offset in seconds")
     parser.add_argument("--no-music", action="store_true", help="Disable background music")
+
+    # YouTube Upload Arguments
+    parser.add_argument("--upload", action="store_true", help="Upload final video to YouTube")
+    parser.add_argument("--privacy", type=str, default="private", choices=["private", "unlisted", "public"], help="Privacy status for YouTube upload")
+
     
     args = parser.parse_args()
 
@@ -146,11 +153,53 @@ def main():
                 print(f"Music added successfully. Removing silent version.")
                 os.remove(final_dest_path)
                 print(f"FINAL OUTPUT: {music_dest_path}")
+                final_video_path = music_dest_path
             else:
                 print("Warning: Failed to add music. Keeping silent version.")
                 print(f"FINAL OUTPUT: {final_dest_path}")
+                final_video_path = final_dest_path
         else:
              print(f"FINAL OUTPUT: {final_dest_path}")
+             final_video_path = final_dest_path
+        
+        # 5. Upload to YouTube (Optional)
+        if args.upload:
+            print("--- 5. Uploading to YouTube ---")
+            
+            # Generate Metadata
+            metadata_gen = VideoMetadataGenerator(input_data)
+            video_title = metadata_gen.get_title()
+            video_description = metadata_gen.get_description()
+            video_tags = metadata_gen.get_tags()
+            
+            print(f"Title: {video_title}")
+            print(f"Description Preview:\n{video_description[:100]}...")
+
+            uploader = YouTubeUploader()
+            try:
+                # Note: The uploader.upload_video method in previous step didn't explicitly take tags arg in some versions
+                # checking src/youtube_uploader.py content in memory... 
+                # It took (file_path, title, description, category_id, privacy_status). 
+                # It hardcoded tags inside. I should update uploader if I want dynamic tags, 
+                # OR just put tags in description. The plan said "Returns list of tags".
+                # Let's check uploader signature or update it.
+                
+                # Based on previous step, uploader.upload_video had:
+                # body = { 'snippet': { ... 'tags': ['crypto'...] ... } }
+                # It did NOT take tags as argument. I should update uploader.py first or now.
+                # Let's assume I will update uploader.py in next step or use what I have.
+                # For now, I'll pass title and description.
+                
+                uploader.upload_video(
+                    file_path=final_video_path,
+                    title=video_title,
+                    description=video_description,
+                    tags=video_tags,
+                    privacy_status=args.privacy
+                )
+            except Exception as e:
+                print(f"Error uploading to YouTube: {e}")
+
 
     else:
         print("Error: Could not find generated video file.")

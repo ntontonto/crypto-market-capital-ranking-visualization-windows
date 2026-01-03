@@ -10,3 +10,7 @@ cache/
 current_data.json
 *.mp4
 manual_output.mp4
+
+client_secrets.json
+token.json
+client_secret*.json
