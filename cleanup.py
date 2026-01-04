@@ -38,6 +38,7 @@ def cleanup_temp():
     # 2. Intermediate Files
     files_to_clean = [
         "current_data.json",
+        "current_input.json",
         "manual_output.mp4"
     ]
     for f in files_to_clean:

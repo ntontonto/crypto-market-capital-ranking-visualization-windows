@@ -7,6 +7,7 @@ out_temp/
 media/
 videos/
 cache/
+logs/
 current_data.json
 *.mp4
 manual_output.mp4
